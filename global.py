@@ -1174,3 +1174,6 @@ Vous pouvez intégrer des émojis dans vos réponses."""
                             st.session_state.messages.append({"role": "assistant", "content": response_content})
                         except Exception as e:
                             st.error(f"Error: Make sure your Azure OpenAI credentials are properly set in .streamlit/secrets.toml. Error details: {str(e)}")
+
+if __name__ == '__main__':     
+    st.set_option('server.enableCORS', True)

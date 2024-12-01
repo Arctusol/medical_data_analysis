@@ -16,3 +16,6 @@ numpy
 seaborn
 db-dtypes
 pygwalker
+langchain_openai
+langchain
+langgraph
