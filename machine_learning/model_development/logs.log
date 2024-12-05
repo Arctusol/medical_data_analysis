@@ -1,0 +1,1603 @@
+2024-12-04 16:35:32,023:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:35:32,023:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:35:32,023:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:35:32,023:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:38:27,807:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:38:27,808:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:38:27,808:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:38:27,808:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:00,492:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:00,492:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:00,492:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:00,492:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:34,793:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:34,793:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:34,793:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:34,793:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:40:50,835:INFO:PyCaret ClassificationExperiment
+2024-12-04 16:40:50,835:INFO:Logging name: service_classification_v1
+2024-12-04 16:40:50,835:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2024-12-04 16:40:50,835:INFO:version 3.3.2
+2024-12-04 16:40:50,835:INFO:Initializing setup()
+2024-12-04 16:40:50,835:INFO:self.USI: 9650
+2024-12-04 16:40:50,835:INFO:self._variable_keys: {'is_multiclass', 'memory', 'html_param', 'n_jobs_param', 'gpu_param', 'fold_generator', 'data', 'X', 'exp_id', 'log_plots_param', 'seed', '_ml_usecase', 'fix_imbalance', 'logging_param', 'USI', 'pipeline', 'X_test', 'gpu_n_jobs_param', 'y', 'idx', 'target_param', 'y_train', 'fold_shuffle_param', 'X_train', 'exp_name_log', 'y_test', 'fold_groups_param', '_available_plots'}
+2024-12-04 16:40:50,835:INFO:Checking environment
+2024-12-04 16:40:50,835:INFO:python_version: 3.11.9
+2024-12-04 16:40:50,835:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2024-12-04 16:40:50,835:INFO:machine: AMD64
+2024-12-04 16:40:50,835:INFO:platform: Windows-10-10.0.22635-SP0
+2024-12-04 16:40:50,841:INFO:Memory: svmem(total=17007292416, available=1760534528, percent=89.6, used=15246757888, free=1760534528)
+2024-12-04 16:40:50,842:INFO:Physical Core: 4
+2024-12-04 16:40:50,842:INFO:Logical Core: 8
+2024-12-04 16:40:50,842:INFO:Checking libraries
+2024-12-04 16:40:50,842:INFO:System:
+2024-12-04 16:40:50,842:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2024-12-04 16:40:50,842:INFO:executable: c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Scripts\python.exe
+2024-12-04 16:40:50,842:INFO:   machine: Windows-10-10.0.22635-SP0
+2024-12-04 16:40:50,842:INFO:PyCaret required dependencies:
+2024-12-04 16:40:50,869:INFO:                 pip: 24.3.1
+2024-12-04 16:40:50,869:INFO:          setuptools: 65.5.0
+2024-12-04 16:40:50,869:INFO:             pycaret: 3.3.2
+2024-12-04 16:40:50,869:INFO:             IPython: 8.12.3
+2024-12-04 16:40:50,869:INFO:          ipywidgets: 8.1.5
+2024-12-04 16:40:50,869:INFO:                tqdm: 4.67.1
+2024-12-04 16:40:50,869:INFO:               numpy: 1.26.4
+2024-12-04 16:40:50,869:INFO:              pandas: 2.1.4
+2024-12-04 16:40:50,869:INFO:              jinja2: 3.1.4
+2024-12-04 16:40:50,869:INFO:               scipy: 1.11.4
+2024-12-04 16:40:50,869:INFO:              joblib: 1.3.2
+2024-12-04 16:40:50,869:INFO:             sklearn: 1.4.2
+2024-12-04 16:40:50,870:INFO:                pyod: 2.0.2
+2024-12-04 16:40:50,870:INFO:            imblearn: 0.12.4
+2024-12-04 16:40:50,870:INFO:   category_encoders: 2.6.4
+2024-12-04 16:40:50,870:INFO:            lightgbm: 4.5.0
+2024-12-04 16:40:50,870:INFO:               numba: 0.60.0
+2024-12-04 16:40:50,870:INFO:            requests: 2.32.3
+2024-12-04 16:40:50,870:INFO:          matplotlib: 3.7.5
+2024-12-04 16:40:50,870:INFO:          scikitplot: 0.3.7
+2024-12-04 16:40:50,870:INFO:         yellowbrick: 1.5
+2024-12-04 16:40:50,870:INFO:              plotly: 5.24.1
+2024-12-04 16:40:50,870:INFO:    plotly-resampler: Not installed
+2024-12-04 16:40:50,870:INFO:             kaleido: 0.2.1
+2024-12-04 16:40:50,870:INFO:           schemdraw: 0.15
+2024-12-04 16:40:50,870:INFO:         statsmodels: 0.14.4
+2024-12-04 16:40:50,870:INFO:              sktime: 0.26.0
+2024-12-04 16:40:50,870:INFO:               tbats: 1.1.3
+2024-12-04 16:40:50,870:INFO:            pmdarima: 2.0.4
+2024-12-04 16:40:50,870:INFO:              psutil: 6.1.0
+2024-12-04 16:40:50,870:INFO:          markupsafe: 3.0.2
+2024-12-04 16:40:50,870:INFO:             pickle5: Not installed
+2024-12-04 16:40:50,870:INFO:         cloudpickle: 3.1.0
+2024-12-04 16:40:50,870:INFO:         deprecation: 2.1.0
+2024-12-04 16:40:50,870:INFO:              xxhash: 3.5.0
+2024-12-04 16:40:50,870:INFO:           wurlitzer: Not installed
+2024-12-04 16:40:50,870:INFO:PyCaret optional dependencies:
+2024-12-04 16:40:50,909:INFO:                shap: Not installed
+2024-12-04 16:40:50,909:INFO:           interpret: Not installed
+2024-12-04 16:40:50,909:INFO:                umap: Not installed
+2024-12-04 16:40:50,909:INFO:     ydata_profiling: Not installed
+2024-12-04 16:40:50,909:INFO:  explainerdashboard: Not installed
+2024-12-04 16:40:50,909:INFO:             autoviz: Not installed
+2024-12-04 16:40:50,909:INFO:           fairlearn: Not installed
+2024-12-04 16:40:50,910:INFO:          deepchecks: Not installed
+2024-12-04 16:40:50,910:INFO:             xgboost: Not installed
+2024-12-04 16:40:50,910:INFO:            catboost: Not installed
+2024-12-04 16:40:50,910:INFO:              kmodes: Not installed
+2024-12-04 16:40:50,910:INFO:             mlxtend: Not installed
+2024-12-04 16:40:50,910:INFO:       statsforecast: Not installed
+2024-12-04 16:40:50,910:INFO:        tune_sklearn: Not installed
+2024-12-04 16:40:50,910:INFO:                 ray: Not installed
+2024-12-04 16:40:50,910:INFO:            hyperopt: Not installed
+2024-12-04 16:40:50,910:INFO:              optuna: Not installed
+2024-12-04 16:40:50,910:INFO:               skopt: Not installed
+2024-12-04 16:40:50,910:INFO:              mlflow: 2.18.0
+2024-12-04 16:40:50,910:INFO:              gradio: Not installed
+2024-12-04 16:40:50,910:INFO:             fastapi: Not installed
+2024-12-04 16:40:50,910:INFO:             uvicorn: 0.32.1
+2024-12-04 16:40:50,910:INFO:              m2cgen: Not installed
+2024-12-04 16:40:50,910:INFO:           evidently: Not installed
+2024-12-04 16:40:50,910:INFO:               fugue: Not installed
+2024-12-04 16:40:50,910:INFO:           streamlit: 1.40.1
+2024-12-04 16:40:50,910:INFO:             prophet: Not installed
+2024-12-04 16:40:50,910:INFO:None
+2024-12-04 16:40:50,910:INFO:Set up data.
+2024-12-04 16:40:51,004:INFO:Set up folding strategy.
+2024-12-04 16:40:51,004:INFO:Set up train/test split.
+2024-12-04 16:40:51,146:INFO:Set up index.
+2024-12-04 16:40:51,153:INFO:Assigning column types.
+2024-12-04 16:40:51,246:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2024-12-04 16:40:51,284:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,290:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,321:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,321:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,368:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,368:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,392:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,392:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,394:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2024-12-04 16:40:51,435:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,461:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,461:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,495:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:40:51,526:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,527:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,527:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2024-12-04 16:40:51,592:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,592:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,664:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,668:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,670:INFO:Preparing preprocessing pipeline...
+2024-12-04 16:40:51,686:INFO:Set up simple imputation.
+2024-12-04 16:40:51,737:INFO:Set up encoding of categorical features.
+2024-12-04 16:40:51,739:INFO:Set up removing multicollinearity.
+2024-12-04 16:40:51,739:INFO:Set up column transformation.
+2024-12-04 16:40:51,739:INFO:Set up feature normalization.
+2024-12-04 16:40:51,739:INFO:Set up feature selection.
+2024-12-04 16:40:51,807:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:51,807:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:40:59,582:INFO:Finished creating preprocessing pipeline.
+2024-12-04 16:40:59,592:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\antob\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['pathologie', 'nom_pathologie',
+                                             'tranche_age_0_1',
+                                             'tranche_age_1_4',
+                                             'tranche_age_5_14',
+                                             'tranche_age_15_24',
+                                             'tranche_age_25_34',
+                                             'tranche_age_35_44',
+                                             'tranche_age_45_54',
+                                             'tranche_age_55_64',
+                                             'tranche_age_65_74...
+                                                                                         learning_rate=0.1,
+                                                                                         max_depth=-1,
+                                                                                         min_child_samples=20,
+                                                                                         min_child_weight=0.001,
+                                                                                         min_split_gain=0.0,
+                                                                                         n_estimators=100,
+                                                                                         n_jobs=None,
+                                                                                         num_leaves=31,
+                                                                                         objective=None,
+                                                                                         random_state=None,
+                                                                                         reg_alpha=0.0,
+                                                                                         reg_lambda=0.0,
+                                                                                         subsample=1.0,
+                                                                                         subsample_for_bin=200000,
+                                                                                         subsample_freq=0),
+                                                                importance_getter='auto',
+                                                                max_features=3,
+                                                                norm_order=1,
+                                                                prefit=False,
+                                                                threshold=-inf)))],
+         verbose=False)
+2024-12-04 16:40:59,592:INFO:Creating final display dataframe.
+2024-12-04 16:41:01,109:INFO:Setup _display_container:                     Description                      Value
+0                    Session id                        123
+1                        Target             classification
+2                   Target type                 Multiclass
+3           Original data shape               (283187, 17)
+4        Transformed data shape                (283187, 4)
+5   Transformed train set shape                (198230, 4)
+6    Transformed test set shape                 (84957, 4)
+7              Numeric features                         15
+8          Categorical features                          1
+9      Rows with missing values                       3.0%
+10                   Preprocess                       True
+11              Imputation type                     simple
+12           Numeric imputation                       mean
+13       Categorical imputation                       mode
+14     Maximum one-hot encoding                         25
+15              Encoding method                       None
+16     Remove multicollinearity                       True
+17  Multicollinearity threshold                        0.9
+18               Transformation                       True
+19        Transformation method                yeo-johnson
+20                    Normalize                       True
+21             Normalize method                     zscore
+22            Feature selection                       True
+23     Feature selection method                    classic
+24  Feature selection estimator                   lightgbm
+25  Number of features selected                        0.2
+26               Fold Generator            StratifiedKFold
+27                  Fold Number                          5
+28                     CPU Jobs                         -1
+29                      Use GPU                      False
+30               Log Experiment               MlflowLogger
+31              Experiment Name  service_classification_v1
+32                          USI                       9650
+2024-12-04 16:41:01,216:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:41:01,217:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:41:01,280:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:41:01,284:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:41:01,284:INFO:Logging experiment in loggers
+2024-12-04 16:42:33,357:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:42:33,357:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:42:33,357:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:42:33,357:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:42:51,384:INFO:PyCaret ClassificationExperiment
+2024-12-04 16:42:51,384:INFO:Logging name: service_classification_v1
+2024-12-04 16:42:51,384:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2024-12-04 16:42:51,384:INFO:version 3.3.2
+2024-12-04 16:42:51,384:INFO:Initializing setup()
+2024-12-04 16:42:51,384:INFO:self.USI: 1929
+2024-12-04 16:42:51,384:INFO:self._variable_keys: {'n_jobs_param', 'X_test', 'y', '_available_plots', 'target_param', 'data', 'USI', 'y_train', 'X_train', 'y_test', 'gpu_n_jobs_param', 'idx', 'seed', '_ml_usecase', 'fold_shuffle_param', 'X', 'fold_generator', 'is_multiclass', 'memory', 'exp_name_log', 'gpu_param', 'exp_id', 'fix_imbalance', 'log_plots_param', 'logging_param', 'html_param', 'fold_groups_param', 'pipeline'}
+2024-12-04 16:42:51,384:INFO:Checking environment
+2024-12-04 16:42:51,384:INFO:python_version: 3.11.9
+2024-12-04 16:42:51,384:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2024-12-04 16:42:51,384:INFO:machine: AMD64
+2024-12-04 16:42:51,384:INFO:platform: Windows-10-10.0.22635-SP0
+2024-12-04 16:42:51,390:INFO:Memory: svmem(total=17007292416, available=1642381312, percent=90.3, used=15364911104, free=1642381312)
+2024-12-04 16:42:51,390:INFO:Physical Core: 4
+2024-12-04 16:42:51,390:INFO:Logical Core: 8
+2024-12-04 16:42:51,390:INFO:Checking libraries
+2024-12-04 16:42:51,390:INFO:System:
+2024-12-04 16:42:51,390:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2024-12-04 16:42:51,390:INFO:executable: c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Scripts\python.exe
+2024-12-04 16:42:51,390:INFO:   machine: Windows-10-10.0.22635-SP0
+2024-12-04 16:42:51,390:INFO:PyCaret required dependencies:
+2024-12-04 16:42:51,414:INFO:                 pip: 24.3.1
+2024-12-04 16:42:51,414:INFO:          setuptools: 65.5.0
+2024-12-04 16:42:51,414:INFO:             pycaret: 3.3.2
+2024-12-04 16:42:51,414:INFO:             IPython: 8.12.3
+2024-12-04 16:42:51,414:INFO:          ipywidgets: 8.1.5
+2024-12-04 16:42:51,415:INFO:                tqdm: 4.67.1
+2024-12-04 16:42:51,415:INFO:               numpy: 1.26.4
+2024-12-04 16:42:51,415:INFO:              pandas: 2.1.4
+2024-12-04 16:42:51,415:INFO:              jinja2: 3.1.4
+2024-12-04 16:42:51,415:INFO:               scipy: 1.11.4
+2024-12-04 16:42:51,415:INFO:              joblib: 1.3.2
+2024-12-04 16:42:51,415:INFO:             sklearn: 1.4.2
+2024-12-04 16:42:51,415:INFO:                pyod: 2.0.2
+2024-12-04 16:42:51,415:INFO:            imblearn: 0.12.4
+2024-12-04 16:42:51,415:INFO:   category_encoders: 2.6.4
+2024-12-04 16:42:51,415:INFO:            lightgbm: 4.5.0
+2024-12-04 16:42:51,415:INFO:               numba: 0.60.0
+2024-12-04 16:42:51,415:INFO:            requests: 2.32.3
+2024-12-04 16:42:51,415:INFO:          matplotlib: 3.7.5
+2024-12-04 16:42:51,415:INFO:          scikitplot: 0.3.7
+2024-12-04 16:42:51,415:INFO:         yellowbrick: 1.5
+2024-12-04 16:42:51,415:INFO:              plotly: 5.24.1
+2024-12-04 16:42:51,415:INFO:    plotly-resampler: Not installed
+2024-12-04 16:42:51,415:INFO:             kaleido: 0.2.1
+2024-12-04 16:42:51,415:INFO:           schemdraw: 0.15
+2024-12-04 16:42:51,415:INFO:         statsmodels: 0.14.4
+2024-12-04 16:42:51,415:INFO:              sktime: 0.26.0
+2024-12-04 16:42:51,415:INFO:               tbats: 1.1.3
+2024-12-04 16:42:51,415:INFO:            pmdarima: 2.0.4
+2024-12-04 16:42:51,415:INFO:              psutil: 6.1.0
+2024-12-04 16:42:51,415:INFO:          markupsafe: 3.0.2
+2024-12-04 16:42:51,415:INFO:             pickle5: Not installed
+2024-12-04 16:42:51,415:INFO:         cloudpickle: 3.1.0
+2024-12-04 16:42:51,415:INFO:         deprecation: 2.1.0
+2024-12-04 16:42:51,415:INFO:              xxhash: 3.5.0
+2024-12-04 16:42:51,415:INFO:           wurlitzer: Not installed
+2024-12-04 16:42:51,415:INFO:PyCaret optional dependencies:
+2024-12-04 16:42:51,447:INFO:                shap: Not installed
+2024-12-04 16:42:51,447:INFO:           interpret: Not installed
+2024-12-04 16:42:51,447:INFO:                umap: Not installed
+2024-12-04 16:42:51,447:INFO:     ydata_profiling: Not installed
+2024-12-04 16:42:51,447:INFO:  explainerdashboard: Not installed
+2024-12-04 16:42:51,447:INFO:             autoviz: Not installed
+2024-12-04 16:42:51,447:INFO:           fairlearn: Not installed
+2024-12-04 16:42:51,447:INFO:          deepchecks: Not installed
+2024-12-04 16:42:51,447:INFO:             xgboost: Not installed
+2024-12-04 16:42:51,447:INFO:            catboost: Not installed
+2024-12-04 16:42:51,447:INFO:              kmodes: Not installed
+2024-12-04 16:42:51,448:INFO:             mlxtend: Not installed
+2024-12-04 16:42:51,448:INFO:       statsforecast: Not installed
+2024-12-04 16:42:51,448:INFO:        tune_sklearn: Not installed
+2024-12-04 16:42:51,448:INFO:                 ray: Not installed
+2024-12-04 16:42:51,448:INFO:            hyperopt: Not installed
+2024-12-04 16:42:51,448:INFO:              optuna: Not installed
+2024-12-04 16:42:51,448:INFO:               skopt: Not installed
+2024-12-04 16:42:51,448:INFO:              mlflow: 2.18.0
+2024-12-04 16:42:51,448:INFO:              gradio: Not installed
+2024-12-04 16:42:51,448:INFO:             fastapi: Not installed
+2024-12-04 16:42:51,448:INFO:             uvicorn: 0.32.1
+2024-12-04 16:42:51,448:INFO:              m2cgen: Not installed
+2024-12-04 16:42:51,448:INFO:           evidently: Not installed
+2024-12-04 16:42:51,448:INFO:               fugue: Not installed
+2024-12-04 16:42:51,448:INFO:           streamlit: 1.40.1
+2024-12-04 16:42:51,448:INFO:             prophet: Not installed
+2024-12-04 16:42:51,448:INFO:None
+2024-12-04 16:42:51,448:INFO:Set up data.
+2024-12-04 16:42:51,570:INFO:Set up folding strategy.
+2024-12-04 16:42:51,570:INFO:Set up train/test split.
+2024-12-04 16:42:51,721:INFO:Set up index.
+2024-12-04 16:42:51,727:INFO:Assigning column types.
+2024-12-04 16:42:51,832:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2024-12-04 16:42:51,873:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:42:51,877:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:42:51,909:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:51,909:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:51,954:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:42:51,954:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:42:51,978:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:51,978:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:51,978:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2024-12-04 16:42:52,019:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:42:52,043:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,043:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,086:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:42:52,113:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,113:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,113:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2024-12-04 16:42:52,182:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,182:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,244:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,244:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,244:INFO:Preparing preprocessing pipeline...
+2024-12-04 16:42:52,269:INFO:Set up simple imputation.
+2024-12-04 16:42:52,321:INFO:Set up encoding of categorical features.
+2024-12-04 16:42:52,321:INFO:Set up removing multicollinearity.
+2024-12-04 16:42:52,321:INFO:Set up column transformation.
+2024-12-04 16:42:52,321:INFO:Set up feature normalization.
+2024-12-04 16:42:52,321:INFO:Set up feature selection.
+2024-12-04 16:42:52,396:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:52,396:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:53,084:INFO:Finished creating preprocessing pipeline.
+2024-12-04 16:42:53,103:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\antob\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['pathologie', 'nom_pathologie',
+                                             'tranche_age_0_1',
+                                             'tranche_age_1_4',
+                                             'tranche_age_5_14',
+                                             'tranche_age_15_24',
+                                             'tranche_age_25_34',
+                                             'tranche_age_35_44',
+                                             'tranche_age_45_54',
+                                             'tranche_age_55_64',
+                                             'tranche_age_65_74...
+                                                                                         learning_rate=0.1,
+                                                                                         max_depth=-1,
+                                                                                         min_child_samples=20,
+                                                                                         min_child_weight=0.001,
+                                                                                         min_split_gain=0.0,
+                                                                                         n_estimators=100,
+                                                                                         n_jobs=None,
+                                                                                         num_leaves=31,
+                                                                                         objective=None,
+                                                                                         random_state=None,
+                                                                                         reg_alpha=0.0,
+                                                                                         reg_lambda=0.0,
+                                                                                         subsample=1.0,
+                                                                                         subsample_for_bin=200000,
+                                                                                         subsample_freq=0),
+                                                                importance_getter='auto',
+                                                                max_features=3,
+                                                                norm_order=1,
+                                                                prefit=False,
+                                                                threshold=-inf)))],
+         verbose=False)
+2024-12-04 16:42:53,104:INFO:Creating final display dataframe.
+2024-12-04 16:42:53,767:INFO:Setup _display_container:                     Description                      Value
+0                    Session id                        123
+1                        Target             classification
+2                   Target type                 Multiclass
+3           Original data shape               (283187, 17)
+4        Transformed data shape                (283187, 4)
+5   Transformed train set shape                (198230, 4)
+6    Transformed test set shape                 (84957, 4)
+7              Numeric features                         15
+8          Categorical features                          1
+9      Rows with missing values                       3.0%
+10                   Preprocess                       True
+11              Imputation type                     simple
+12           Numeric imputation                       mean
+13       Categorical imputation                       mode
+14     Maximum one-hot encoding                         25
+15              Encoding method                       None
+16     Remove multicollinearity                       True
+17  Multicollinearity threshold                        0.9
+18               Transformation                       True
+19        Transformation method                yeo-johnson
+20                    Normalize                       True
+21             Normalize method                     zscore
+22            Feature selection                       True
+23     Feature selection method                    classic
+24  Feature selection estimator                   lightgbm
+25  Number of features selected                        0.2
+26               Fold Generator            StratifiedKFold
+27                  Fold Number                          5
+28                     CPU Jobs                         -1
+29                      Use GPU                      False
+30               Log Experiment               MlflowLogger
+31              Experiment Name  service_classification_v1
+32                          USI                       1929
+2024-12-04 16:42:53,871:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:53,871:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:53,939:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:53,939:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:42:53,939:INFO:Logging experiment in loggers
+2024-12-04 16:43:37,732:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:43:37,734:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:43:37,734:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:43:37,734:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:44:46,757:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:44:46,757:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:44:46,757:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:44:46,757:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:44:59,331:INFO:PyCaret ClassificationExperiment
+2024-12-04 16:44:59,332:INFO:Logging name: clf-default-name
+2024-12-04 16:44:59,332:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2024-12-04 16:44:59,332:INFO:version 3.3.2
+2024-12-04 16:44:59,332:INFO:Initializing setup()
+2024-12-04 16:44:59,332:INFO:self.USI: c46c
+2024-12-04 16:44:59,332:INFO:self._variable_keys: {'idx', 'logging_param', 'y_train', 'data', 'exp_id', 'X_test', 'n_jobs_param', 'fold_shuffle_param', 'is_multiclass', 'gpu_param', 'fold_groups_param', 'pipeline', 'log_plots_param', 'USI', 'target_param', 'X_train', 'y_test', 'X', 'fix_imbalance', 'exp_name_log', 'memory', '_available_plots', 'seed', '_ml_usecase', 'fold_generator', 'y', 'html_param', 'gpu_n_jobs_param'}
+2024-12-04 16:44:59,332:INFO:Checking environment
+2024-12-04 16:44:59,332:INFO:python_version: 3.11.9
+2024-12-04 16:44:59,332:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2024-12-04 16:44:59,332:INFO:machine: AMD64
+2024-12-04 16:44:59,332:INFO:platform: Windows-10-10.0.22635-SP0
+2024-12-04 16:44:59,339:INFO:Memory: svmem(total=17007292416, available=1556086784, percent=90.9, used=15451205632, free=1556086784)
+2024-12-04 16:44:59,339:INFO:Physical Core: 4
+2024-12-04 16:44:59,339:INFO:Logical Core: 8
+2024-12-04 16:44:59,339:INFO:Checking libraries
+2024-12-04 16:44:59,339:INFO:System:
+2024-12-04 16:44:59,339:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2024-12-04 16:44:59,339:INFO:executable: c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Scripts\python.exe
+2024-12-04 16:44:59,339:INFO:   machine: Windows-10-10.0.22635-SP0
+2024-12-04 16:44:59,339:INFO:PyCaret required dependencies:
+2024-12-04 16:44:59,362:INFO:                 pip: 24.3.1
+2024-12-04 16:44:59,362:INFO:          setuptools: 65.5.0
+2024-12-04 16:44:59,362:INFO:             pycaret: 3.3.2
+2024-12-04 16:44:59,362:INFO:             IPython: 8.12.3
+2024-12-04 16:44:59,362:INFO:          ipywidgets: 8.1.5
+2024-12-04 16:44:59,362:INFO:                tqdm: 4.67.1
+2024-12-04 16:44:59,362:INFO:               numpy: 1.26.4
+2024-12-04 16:44:59,362:INFO:              pandas: 2.1.4
+2024-12-04 16:44:59,362:INFO:              jinja2: 3.1.4
+2024-12-04 16:44:59,362:INFO:               scipy: 1.11.4
+2024-12-04 16:44:59,362:INFO:              joblib: 1.3.2
+2024-12-04 16:44:59,362:INFO:             sklearn: 1.4.2
+2024-12-04 16:44:59,362:INFO:                pyod: 2.0.2
+2024-12-04 16:44:59,362:INFO:            imblearn: 0.12.4
+2024-12-04 16:44:59,362:INFO:   category_encoders: 2.6.4
+2024-12-04 16:44:59,362:INFO:            lightgbm: 4.5.0
+2024-12-04 16:44:59,362:INFO:               numba: 0.60.0
+2024-12-04 16:44:59,362:INFO:            requests: 2.32.3
+2024-12-04 16:44:59,362:INFO:          matplotlib: 3.7.5
+2024-12-04 16:44:59,362:INFO:          scikitplot: 0.3.7
+2024-12-04 16:44:59,362:INFO:         yellowbrick: 1.5
+2024-12-04 16:44:59,363:INFO:              plotly: 5.24.1
+2024-12-04 16:44:59,363:INFO:    plotly-resampler: Not installed
+2024-12-04 16:44:59,363:INFO:             kaleido: 0.2.1
+2024-12-04 16:44:59,363:INFO:           schemdraw: 0.15
+2024-12-04 16:44:59,363:INFO:         statsmodels: 0.14.4
+2024-12-04 16:44:59,363:INFO:              sktime: 0.26.0
+2024-12-04 16:44:59,363:INFO:               tbats: 1.1.3
+2024-12-04 16:44:59,363:INFO:            pmdarima: 2.0.4
+2024-12-04 16:44:59,363:INFO:              psutil: 6.1.0
+2024-12-04 16:44:59,363:INFO:          markupsafe: 3.0.2
+2024-12-04 16:44:59,363:INFO:             pickle5: Not installed
+2024-12-04 16:44:59,363:INFO:         cloudpickle: 3.1.0
+2024-12-04 16:44:59,363:INFO:         deprecation: 2.1.0
+2024-12-04 16:44:59,363:INFO:              xxhash: 3.5.0
+2024-12-04 16:44:59,363:INFO:           wurlitzer: Not installed
+2024-12-04 16:44:59,363:INFO:PyCaret optional dependencies:
+2024-12-04 16:44:59,394:INFO:                shap: Not installed
+2024-12-04 16:44:59,394:INFO:           interpret: Not installed
+2024-12-04 16:44:59,394:INFO:                umap: Not installed
+2024-12-04 16:44:59,394:INFO:     ydata_profiling: Not installed
+2024-12-04 16:44:59,394:INFO:  explainerdashboard: Not installed
+2024-12-04 16:44:59,394:INFO:             autoviz: Not installed
+2024-12-04 16:44:59,395:INFO:           fairlearn: Not installed
+2024-12-04 16:44:59,395:INFO:          deepchecks: Not installed
+2024-12-04 16:44:59,395:INFO:             xgboost: Not installed
+2024-12-04 16:44:59,395:INFO:            catboost: Not installed
+2024-12-04 16:44:59,395:INFO:              kmodes: Not installed
+2024-12-04 16:44:59,395:INFO:             mlxtend: Not installed
+2024-12-04 16:44:59,395:INFO:       statsforecast: Not installed
+2024-12-04 16:44:59,395:INFO:        tune_sklearn: Not installed
+2024-12-04 16:44:59,395:INFO:                 ray: Not installed
+2024-12-04 16:44:59,395:INFO:            hyperopt: Not installed
+2024-12-04 16:44:59,395:INFO:              optuna: Not installed
+2024-12-04 16:44:59,395:INFO:               skopt: Not installed
+2024-12-04 16:44:59,395:INFO:              mlflow: 2.18.0
+2024-12-04 16:44:59,395:INFO:              gradio: Not installed
+2024-12-04 16:44:59,395:INFO:             fastapi: Not installed
+2024-12-04 16:44:59,395:INFO:             uvicorn: 0.32.1
+2024-12-04 16:44:59,395:INFO:              m2cgen: Not installed
+2024-12-04 16:44:59,395:INFO:           evidently: Not installed
+2024-12-04 16:44:59,395:INFO:               fugue: Not installed
+2024-12-04 16:44:59,395:INFO:           streamlit: 1.40.1
+2024-12-04 16:44:59,395:INFO:             prophet: Not installed
+2024-12-04 16:44:59,395:INFO:None
+2024-12-04 16:44:59,395:INFO:Set up data.
+2024-12-04 16:44:59,497:INFO:Set up folding strategy.
+2024-12-04 16:44:59,497:INFO:Set up train/test split.
+2024-12-04 16:44:59,643:INFO:Set up index.
+2024-12-04 16:44:59,651:INFO:Assigning column types.
+2024-12-04 16:44:59,748:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2024-12-04 16:44:59,785:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:44:59,789:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:44:59,823:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:44:59,823:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:44:59,866:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2024-12-04 16:44:59,867:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:44:59,890:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:44:59,893:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:44:59,893:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2024-12-04 16:44:59,932:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:44:59,957:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:44:59,957:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,001:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2024-12-04 16:45:00,026:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,027:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,027:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2024-12-04 16:45:00,093:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,094:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,160:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,160:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:00,160:INFO:Preparing preprocessing pipeline...
+2024-12-04 16:45:00,176:INFO:Set up simple imputation.
+2024-12-04 16:45:00,223:INFO:Set up encoding of categorical features.
+2024-12-04 16:45:00,584:INFO:Finished creating preprocessing pipeline.
+2024-12-04 16:45:00,589:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\antob\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['pathologie', 'nom_pathologie',
+                                             'tranche_age_0_1',
+                                             'tranche_age_1_4',
+                                             'tranche_age_5_14',
+                                             'tranche_age_15_24',
+                                             'tranche_age_25_34',
+                                             'tranche_age_35_44',
+                                             'tranche_age_45_54',
+                                             'tranche_age_55_64',
+                                             'tranche_age_65_74...
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent'))),
+                ('rest_encoding',
+                 TransformerWrapper(exclude=None, include=['code_pathologie'],
+                                    transformer=TargetEncoder(cols=['code_pathologie'],
+                                                              drop_invariant=False,
+                                                              handle_missing='return_nan',
+                                                              handle_unknown='value',
+                                                              hierarchy=None,
+                                                              min_samples_leaf=20,
+                                                              return_df=True,
+                                                              smoothing=10,
+                                                              verbose=0)))],
+         verbose=False)
+2024-12-04 16:45:00,589:INFO:Creating final display dataframe.
+2024-12-04 16:45:01,424:INFO:Setup _display_container:                     Description             Value
+0                    Session id               123
+1                        Target    classification
+2                   Target type        Multiclass
+3           Original data shape      (283187, 17)
+4        Transformed data shape      (283187, 17)
+5   Transformed train set shape      (198230, 17)
+6    Transformed test set shape       (84957, 17)
+7              Numeric features                15
+8          Categorical features                 1
+9      Rows with missing values              3.0%
+10                   Preprocess              True
+11              Imputation type            simple
+12           Numeric imputation              mean
+13       Categorical imputation              mode
+14     Maximum one-hot encoding                25
+15              Encoding method              None
+16               Fold Generator   StratifiedKFold
+17                  Fold Number                 5
+18                     CPU Jobs                -1
+19                      Use GPU             False
+20               Log Experiment             False
+21              Experiment Name  clf-default-name
+22                          USI              c46c
+2024-12-04 16:45:01,500:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:01,500:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:01,570:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:01,570:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2024-12-04 16:45:01,573:INFO:setup() successfully completed in 2.26s...............
+2024-12-04 16:45:01,573:INFO:Initializing compare_models()
+2024-12-04 16:45:01,573:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, include=None, exclude=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Accuracy', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>})
+2024-12-04 16:45:01,573:INFO:Checking exceptions
+2024-12-04 16:45:01,664:INFO:Preparing display monitor
+2024-12-04 16:45:01,684:INFO:Initializing Logistic Regression
+2024-12-04 16:45:01,684:INFO:Total runtime is 0.0 minutes
+2024-12-04 16:45:01,690:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:45:01,690:INFO:Initializing create_model()
+2024-12-04 16:45:01,693:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=lr, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:45:01,693:INFO:Checking exceptions
+2024-12-04 16:45:01,693:INFO:Importing libraries
+2024-12-04 16:45:01,693:INFO:Copying training dataset
+2024-12-04 16:45:01,860:INFO:Defining folds
+2024-12-04 16:45:01,860:INFO:Declaring metric variables
+2024-12-04 16:45:01,862:INFO:Importing untrained model
+2024-12-04 16:45:01,863:INFO:Logistic Regression Imported successfully
+2024-12-04 16:45:01,871:INFO:Starting cross validation
+2024-12-04 16:45:01,871:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:45:56,738:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+
+2024-12-04 16:45:56,896:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:45:56,913:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+
+2024-12-04 16:45:56,996:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:45:57,223:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+
+2024-12-04 16:45:57,294:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:45:57,462:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+
+2024-12-04 16:45:57,475:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+
+2024-12-04 16:45:57,541:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:45:57,553:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:45:57,704:INFO:Calculating mean and std
+2024-12-04 16:45:57,705:INFO:Creating metrics dataframe
+2024-12-04 16:45:57,707:INFO:Uploading results into container
+2024-12-04 16:45:57,707:INFO:Uploading model into container now
+2024-12-04 16:45:57,707:INFO:_master_model_container: 1
+2024-12-04 16:45:57,707:INFO:_display_container: 2
+2024-12-04 16:45:57,707:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=123, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2024-12-04 16:45:57,709:INFO:create_model() successfully completed......................................
+2024-12-04 16:45:57,796:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:45:57,796:INFO:Creating metrics dataframe
+2024-12-04 16:45:57,803:INFO:Initializing K Neighbors Classifier
+2024-12-04 16:45:57,803:INFO:Total runtime is 0.9353153785069783 minutes
+2024-12-04 16:45:57,805:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:45:57,805:INFO:Initializing create_model()
+2024-12-04 16:45:57,805:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=knn, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:45:57,805:INFO:Checking exceptions
+2024-12-04 16:45:57,805:INFO:Importing libraries
+2024-12-04 16:45:57,807:INFO:Copying training dataset
+2024-12-04 16:45:57,935:INFO:Defining folds
+2024-12-04 16:45:57,935:INFO:Declaring metric variables
+2024-12-04 16:45:57,939:INFO:Importing untrained model
+2024-12-04 16:45:57,943:INFO:K Neighbors Classifier Imported successfully
+2024-12-04 16:45:57,947:INFO:Starting cross validation
+2024-12-04 16:45:57,947:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:47:17,986:INFO:Calculating mean and std
+2024-12-04 16:47:17,987:INFO:Creating metrics dataframe
+2024-12-04 16:47:17,990:INFO:Uploading results into container
+2024-12-04 16:47:17,990:INFO:Uploading model into container now
+2024-12-04 16:47:17,991:INFO:_master_model_container: 2
+2024-12-04 16:47:17,991:INFO:_display_container: 2
+2024-12-04 16:47:17,991:INFO:KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                     weights='uniform')
+2024-12-04 16:47:17,991:INFO:create_model() successfully completed......................................
+2024-12-04 16:47:18,080:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:47:18,080:INFO:Creating metrics dataframe
+2024-12-04 16:47:18,085:INFO:Initializing Naive Bayes
+2024-12-04 16:47:18,085:INFO:Total runtime is 2.273339049021403 minutes
+2024-12-04 16:47:18,089:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:47:18,089:INFO:Initializing create_model()
+2024-12-04 16:47:18,089:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=nb, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:47:18,089:INFO:Checking exceptions
+2024-12-04 16:47:18,089:INFO:Importing libraries
+2024-12-04 16:47:18,089:INFO:Copying training dataset
+2024-12-04 16:47:18,224:INFO:Defining folds
+2024-12-04 16:47:18,224:INFO:Declaring metric variables
+2024-12-04 16:47:18,227:INFO:Importing untrained model
+2024-12-04 16:47:18,231:INFO:Naive Bayes Imported successfully
+2024-12-04 16:47:18,235:INFO:Starting cross validation
+2024-12-04 16:47:18,235:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:47:19,590:INFO:Calculating mean and std
+2024-12-04 16:47:19,590:INFO:Creating metrics dataframe
+2024-12-04 16:47:19,593:INFO:Uploading results into container
+2024-12-04 16:47:19,593:INFO:Uploading model into container now
+2024-12-04 16:47:19,593:INFO:_master_model_container: 3
+2024-12-04 16:47:19,593:INFO:_display_container: 2
+2024-12-04 16:47:19,593:INFO:GaussianNB(priors=None, var_smoothing=1e-09)
+2024-12-04 16:47:19,593:INFO:create_model() successfully completed......................................
+2024-12-04 16:47:19,675:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:47:19,675:INFO:Creating metrics dataframe
+2024-12-04 16:47:19,681:INFO:Initializing Decision Tree Classifier
+2024-12-04 16:47:19,681:INFO:Total runtime is 2.2999385078748067 minutes
+2024-12-04 16:47:19,684:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:47:19,684:INFO:Initializing create_model()
+2024-12-04 16:47:19,684:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=dt, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:47:19,684:INFO:Checking exceptions
+2024-12-04 16:47:19,684:INFO:Importing libraries
+2024-12-04 16:47:19,684:INFO:Copying training dataset
+2024-12-04 16:47:19,814:INFO:Defining folds
+2024-12-04 16:47:19,814:INFO:Declaring metric variables
+2024-12-04 16:47:19,820:INFO:Importing untrained model
+2024-12-04 16:47:19,823:INFO:Decision Tree Classifier Imported successfully
+2024-12-04 16:47:19,828:INFO:Starting cross validation
+2024-12-04 16:47:19,829:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:47:21,300:INFO:Calculating mean and std
+2024-12-04 16:47:21,300:INFO:Creating metrics dataframe
+2024-12-04 16:47:21,303:INFO:Uploading results into container
+2024-12-04 16:47:21,303:INFO:Uploading model into container now
+2024-12-04 16:47:21,303:INFO:_master_model_container: 4
+2024-12-04 16:47:21,303:INFO:_display_container: 2
+2024-12-04 16:47:21,305:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       monotonic_cst=None, random_state=123, splitter='best')
+2024-12-04 16:47:21,305:INFO:create_model() successfully completed......................................
+2024-12-04 16:47:21,387:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:47:21,387:INFO:Creating metrics dataframe
+2024-12-04 16:47:21,393:INFO:Initializing SVM - Linear Kernel
+2024-12-04 16:47:21,393:INFO:Total runtime is 2.3284818053245546 minutes
+2024-12-04 16:47:21,396:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:47:21,396:INFO:Initializing create_model()
+2024-12-04 16:47:21,396:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=svm, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:47:21,396:INFO:Checking exceptions
+2024-12-04 16:47:21,397:INFO:Importing libraries
+2024-12-04 16:47:21,397:INFO:Copying training dataset
+2024-12-04 16:47:21,523:INFO:Defining folds
+2024-12-04 16:47:21,523:INFO:Declaring metric variables
+2024-12-04 16:47:21,528:INFO:Importing untrained model
+2024-12-04 16:47:21,530:INFO:SVM - Linear Kernel Imported successfully
+2024-12-04 16:47:21,536:INFO:Starting cross validation
+2024-12-04 16:47:21,537:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:47:40,209:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:41,680:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:41,738:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:42,078:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:42,214:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:42,365:INFO:Calculating mean and std
+2024-12-04 16:47:42,365:INFO:Creating metrics dataframe
+2024-12-04 16:47:42,365:INFO:Uploading results into container
+2024-12-04 16:47:42,365:INFO:Uploading model into container now
+2024-12-04 16:47:42,368:INFO:_master_model_container: 5
+2024-12-04 16:47:42,368:INFO:_display_container: 2
+2024-12-04 16:47:42,368:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=123, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2024-12-04 16:47:42,369:INFO:create_model() successfully completed......................................
+2024-12-04 16:47:42,459:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:47:42,459:INFO:Creating metrics dataframe
+2024-12-04 16:47:42,463:INFO:Initializing Ridge Classifier
+2024-12-04 16:47:42,465:INFO:Total runtime is 2.67968252102534 minutes
+2024-12-04 16:47:42,465:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:47:42,465:INFO:Initializing create_model()
+2024-12-04 16:47:42,465:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=ridge, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:47:42,465:INFO:Checking exceptions
+2024-12-04 16:47:42,465:INFO:Importing libraries
+2024-12-04 16:47:42,465:INFO:Copying training dataset
+2024-12-04 16:47:42,605:INFO:Defining folds
+2024-12-04 16:47:42,605:INFO:Declaring metric variables
+2024-12-04 16:47:42,610:INFO:Importing untrained model
+2024-12-04 16:47:42,613:INFO:Ridge Classifier Imported successfully
+2024-12-04 16:47:42,618:INFO:Starting cross validation
+2024-12-04 16:47:42,620:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:47:43,603:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:43,633:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2024-12-04 16:47:43,636:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:43,668:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2024-12-04 16:47:43,694:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:43,723:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2024-12-04 16:47:43,736:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:43,764:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2024-12-04 16:47:43,767:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:47:43,789:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2024-12-04 16:47:43,930:INFO:Calculating mean and std
+2024-12-04 16:47:43,930:INFO:Creating metrics dataframe
+2024-12-04 16:47:43,932:INFO:Uploading results into container
+2024-12-04 16:47:43,932:INFO:Uploading model into container now
+2024-12-04 16:47:43,932:INFO:_master_model_container: 6
+2024-12-04 16:47:43,932:INFO:_display_container: 2
+2024-12-04 16:47:43,934:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, positive=False, random_state=123, solver='auto',
+                tol=0.0001)
+2024-12-04 16:47:43,934:INFO:create_model() successfully completed......................................
+2024-12-04 16:47:44,021:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:47:44,021:INFO:Creating metrics dataframe
+2024-12-04 16:47:44,028:INFO:Initializing Random Forest Classifier
+2024-12-04 16:47:44,029:INFO:Total runtime is 2.7057372093200684 minutes
+2024-12-04 16:47:44,031:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:47:44,031:INFO:Initializing create_model()
+2024-12-04 16:47:44,031:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=rf, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:47:44,031:INFO:Checking exceptions
+2024-12-04 16:47:44,031:INFO:Importing libraries
+2024-12-04 16:47:44,031:INFO:Copying training dataset
+2024-12-04 16:47:44,189:INFO:Defining folds
+2024-12-04 16:47:44,189:INFO:Declaring metric variables
+2024-12-04 16:47:44,193:INFO:Importing untrained model
+2024-12-04 16:47:44,197:INFO:Random Forest Classifier Imported successfully
+2024-12-04 16:47:44,203:INFO:Starting cross validation
+2024-12-04 16:47:44,205:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:48:05,084:INFO:Calculating mean and std
+2024-12-04 16:48:05,085:INFO:Creating metrics dataframe
+2024-12-04 16:48:05,085:INFO:Uploading results into container
+2024-12-04 16:48:05,085:INFO:Uploading model into container now
+2024-12-04 16:48:05,089:INFO:_master_model_container: 7
+2024-12-04 16:48:05,089:INFO:_display_container: 2
+2024-12-04 16:48:05,089:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       monotonic_cst=None, n_estimators=100, n_jobs=-1,
+                       oob_score=False, random_state=123, verbose=0,
+                       warm_start=False)
+2024-12-04 16:48:05,089:INFO:create_model() successfully completed......................................
+2024-12-04 16:48:05,207:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:48:05,207:INFO:Creating metrics dataframe
+2024-12-04 16:48:05,213:INFO:Initializing Quadratic Discriminant Analysis
+2024-12-04 16:48:05,213:INFO:Total runtime is 3.058813488483429 minutes
+2024-12-04 16:48:05,220:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:48:05,220:INFO:Initializing create_model()
+2024-12-04 16:48:05,220:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=qda, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:48:05,220:INFO:Checking exceptions
+2024-12-04 16:48:05,220:INFO:Importing libraries
+2024-12-04 16:48:05,220:INFO:Copying training dataset
+2024-12-04 16:48:05,377:INFO:Defining folds
+2024-12-04 16:48:05,377:INFO:Declaring metric variables
+2024-12-04 16:48:05,380:INFO:Importing untrained model
+2024-12-04 16:48:05,385:INFO:Quadratic Discriminant Analysis Imported successfully
+2024-12-04 16:48:05,392:INFO:Starting cross validation
+2024-12-04 16:48:05,393:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:48:06,279:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2024-12-04 16:48:06,390:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2024-12-04 16:48:06,479:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2024-12-04 16:48:06,528:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2024-12-04 16:48:06,820:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:48:06,832:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:48:06,894:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:48:06,945:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:48:06,970:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2024-12-04 16:48:07,128:INFO:Calculating mean and std
+2024-12-04 16:48:07,130:INFO:Creating metrics dataframe
+2024-12-04 16:48:07,131:INFO:Uploading results into container
+2024-12-04 16:48:07,132:INFO:Uploading model into container now
+2024-12-04 16:48:07,133:INFO:_master_model_container: 8
+2024-12-04 16:48:07,133:INFO:_display_container: 2
+2024-12-04 16:48:07,133:INFO:QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)
+2024-12-04 16:48:07,133:INFO:create_model() successfully completed......................................
+2024-12-04 16:48:07,221:INFO:SubProcess create_model() end ==================================
+2024-12-04 16:48:07,221:INFO:Creating metrics dataframe
+2024-12-04 16:48:07,228:INFO:Initializing Ada Boost Classifier
+2024-12-04 16:48:07,228:INFO:Total runtime is 3.092388411362966 minutes
+2024-12-04 16:48:07,230:INFO:SubProcess create_model() called ==================================
+2024-12-04 16:48:07,230:INFO:Initializing create_model()
+2024-12-04 16:48:07,230:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F5327B0710>, estimator=ada, fold=StratifiedKFold(n_splits=5, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F534C5F210>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-12-04 16:48:07,230:INFO:Checking exceptions
+2024-12-04 16:48:07,230:INFO:Importing libraries
+2024-12-04 16:48:07,230:INFO:Copying training dataset
+2024-12-04 16:48:07,364:INFO:Defining folds
+2024-12-04 16:48:07,364:INFO:Declaring metric variables
+2024-12-04 16:48:07,370:INFO:Importing untrained model
+2024-12-04 16:48:07,373:INFO:Ada Boost Classifier Imported successfully
+2024-12-04 16:48:07,381:INFO:Starting cross validation
+2024-12-04 16:48:07,382:INFO:Cross validating with StratifiedKFold(n_splits=5, random_state=None, shuffle=False), n_jobs=-1
+2024-12-04 16:48:08,063:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2024-12-04 16:48:08,098:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2024-12-04 16:48:08,152:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2024-12-04 16:48:08,234:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2024-12-04 16:48:08,266:WARNING:c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2024-12-04 16:48:59,330:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:48:59,330:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:48:59,330:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:48:59,330:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-12-04 16:50:20,874:INFO:PyCaret RegressionExperiment
+2024-12-04 16:50:20,874:INFO:Logging name: duration_prediction_v1
+2024-12-04 16:50:20,874:INFO:ML Usecase: MLUsecase.REGRESSION
+2024-12-04 16:50:20,874:INFO:version 3.3.2
+2024-12-04 16:50:20,874:INFO:Initializing setup()
+2024-12-04 16:50:20,874:INFO:self.USI: 563f
+2024-12-04 16:50:20,874:INFO:self._variable_keys: {'pipeline', 'fold_shuffle_param', 'X_train', 'exp_id', 'y_train', 'html_param', 'X', 'y_test', 'memory', 'n_jobs_param', 'gpu_n_jobs_param', 'X_test', '_available_plots', 'fold_generator', 'transform_target_param', 'target_param', 'data', 'fold_groups_param', 'idx', 'USI', 'logging_param', 'seed', 'gpu_param', 'y', '_ml_usecase', 'log_plots_param', 'exp_name_log'}
+2024-12-04 16:50:20,874:INFO:Checking environment
+2024-12-04 16:50:20,874:INFO:python_version: 3.11.9
+2024-12-04 16:50:20,874:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2024-12-04 16:50:20,874:INFO:machine: AMD64
+2024-12-04 16:50:20,874:INFO:platform: Windows-10-10.0.22635-SP0
+2024-12-04 16:50:20,879:INFO:Memory: svmem(total=17007292416, available=3082625024, percent=81.9, used=13924667392, free=3082625024)
+2024-12-04 16:50:20,880:INFO:Physical Core: 4
+2024-12-04 16:50:20,880:INFO:Logical Core: 8
+2024-12-04 16:50:20,880:INFO:Checking libraries
+2024-12-04 16:50:20,880:INFO:System:
+2024-12-04 16:50:20,880:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2024-12-04 16:50:20,880:INFO:executable: c:\Users\antob\Documents\Arctusol\projet_wagon\projet_data_JBN\.venv\Scripts\python.exe
+2024-12-04 16:50:20,880:INFO:   machine: Windows-10-10.0.22635-SP0
+2024-12-04 16:50:20,880:INFO:PyCaret required dependencies:
+2024-12-04 16:50:20,905:INFO:                 pip: 24.3.1
+2024-12-04 16:50:20,906:INFO:          setuptools: 65.5.0
+2024-12-04 16:50:20,906:INFO:             pycaret: 3.3.2
+2024-12-04 16:50:20,906:INFO:             IPython: 8.12.3
+2024-12-04 16:50:20,906:INFO:          ipywidgets: 8.1.5
+2024-12-04 16:50:20,906:INFO:                tqdm: 4.67.1
+2024-12-04 16:50:20,906:INFO:               numpy: 1.26.4
+2024-12-04 16:50:20,906:INFO:              pandas: 2.1.4
+2024-12-04 16:50:20,906:INFO:              jinja2: 3.1.4
+2024-12-04 16:50:20,906:INFO:               scipy: 1.11.4
+2024-12-04 16:50:20,906:INFO:              joblib: 1.3.2
+2024-12-04 16:50:20,906:INFO:             sklearn: 1.4.2
+2024-12-04 16:50:20,906:INFO:                pyod: 2.0.2
+2024-12-04 16:50:20,907:INFO:            imblearn: 0.12.4
+2024-12-04 16:50:20,907:INFO:   category_encoders: 2.6.4
+2024-12-04 16:50:20,907:INFO:            lightgbm: 4.5.0
+2024-12-04 16:50:20,907:INFO:               numba: 0.60.0
+2024-12-04 16:50:20,907:INFO:            requests: 2.32.3
+2024-12-04 16:50:20,907:INFO:          matplotlib: 3.7.5
+2024-12-04 16:50:20,907:INFO:          scikitplot: 0.3.7
+2024-12-04 16:50:20,907:INFO:         yellowbrick: 1.5
+2024-12-04 16:50:20,907:INFO:              plotly: 5.24.1
+2024-12-04 16:50:20,907:INFO:    plotly-resampler: Not installed
+2024-12-04 16:50:20,907:INFO:             kaleido: 0.2.1
+2024-12-04 16:50:20,907:INFO:           schemdraw: 0.15
+2024-12-04 16:50:20,907:INFO:         statsmodels: 0.14.4
+2024-12-04 16:50:20,907:INFO:              sktime: 0.26.0
+2024-12-04 16:50:20,907:INFO:               tbats: 1.1.3
+2024-12-04 16:50:20,907:INFO:            pmdarima: 2.0.4
+2024-12-04 16:50:20,907:INFO:              psutil: 6.1.0
+2024-12-04 16:50:20,907:INFO:          markupsafe: 3.0.2
+2024-12-04 16:50:20,907:INFO:             pickle5: Not installed
+2024-12-04 16:50:20,907:INFO:         cloudpickle: 3.1.0
+2024-12-04 16:50:20,907:INFO:         deprecation: 2.1.0
+2024-12-04 16:50:20,907:INFO:              xxhash: 3.5.0
+2024-12-04 16:50:20,907:INFO:           wurlitzer: Not installed
+2024-12-04 16:50:20,907:INFO:PyCaret optional dependencies:
+2024-12-04 16:50:20,951:INFO:                shap: Not installed
+2024-12-04 16:50:20,951:INFO:           interpret: Not installed
+2024-12-04 16:50:20,951:INFO:                umap: Not installed
+2024-12-04 16:50:20,951:INFO:     ydata_profiling: Not installed
+2024-12-04 16:50:20,951:INFO:  explainerdashboard: Not installed
+2024-12-04 16:50:20,951:INFO:             autoviz: Not installed
+2024-12-04 16:50:20,951:INFO:           fairlearn: Not installed
+2024-12-04 16:50:20,951:INFO:          deepchecks: Not installed
+2024-12-04 16:50:20,951:INFO:             xgboost: Not installed
+2024-12-04 16:50:20,951:INFO:            catboost: Not installed
+2024-12-04 16:50:20,951:INFO:              kmodes: Not installed
+2024-12-04 16:50:20,951:INFO:             mlxtend: Not installed
+2024-12-04 16:50:20,951:INFO:       statsforecast: Not installed
+2024-12-04 16:50:20,951:INFO:        tune_sklearn: Not installed
+2024-12-04 16:50:20,951:INFO:                 ray: Not installed
+2024-12-04 16:50:20,951:INFO:            hyperopt: Not installed
+2024-12-04 16:50:20,951:INFO:              optuna: Not installed
+2024-12-04 16:50:20,951:INFO:               skopt: Not installed
+2024-12-04 16:50:20,951:INFO:              mlflow: 2.18.0
+2024-12-04 16:50:20,951:INFO:              gradio: Not installed
+2024-12-04 16:50:20,951:INFO:             fastapi: Not installed
+2024-12-04 16:50:20,951:INFO:             uvicorn: 0.32.1
+2024-12-04 16:50:20,951:INFO:              m2cgen: Not installed
+2024-12-04 16:50:20,951:INFO:           evidently: Not installed
+2024-12-04 16:50:20,951:INFO:               fugue: Not installed
+2024-12-04 16:50:20,951:INFO:           streamlit: 1.40.1
+2024-12-04 16:50:20,951:INFO:             prophet: Not installed
+2024-12-04 16:50:20,952:INFO:None
+2024-12-04 16:50:20,952:INFO:Set up data.

@@ -27,7 +27,7 @@ SELECT niveau,
     total_hospi,
     AVG_duree_hospi
 
-FROM {{ref("stg_morbidite_h__duree_sejours")}}
+FROM {{ref("stg_morbidite_h__duree_sejours2")}}
 WHERE NOT (region LIKE '3 - France%' OR region LIKE '1 - France%')
     AND niveau LIKE "Régions"
     AND nom_pathologie != 'TOTAL TOUTES CAUSES'

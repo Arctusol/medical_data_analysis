@@ -38,7 +38,8 @@ logs/
 *.swp
 *.swo
 .DS_Store
-
+*.log
+*.log
 # Streamlit
 .streamlit/secrets.toml
 
@@ -59,3 +60,9 @@ coverage.xml
 
 #BigQuery
 *.json
+<<<<<<< HEAD
+notebooks/logs.log
+
+notebooks/logs.log
+=======
+>>>>>>> 0b06f1df2a1a145164c71042b2238fe6724df702

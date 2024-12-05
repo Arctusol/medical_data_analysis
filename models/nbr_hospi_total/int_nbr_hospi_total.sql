@@ -1,6 +1,6 @@
 SELECT
     niveau,
-    cle_unique,
+    CONCAT(region,"_",code_pathologie,"_",annee) as cle_unique,
     sexe,
     year,
     EXTRACT(year from year) as annee,
@@ -14,7 +14,7 @@ SELECT
     code_age,
     tranche_age,
     nbr_hospi,
-FROM {{ref("stg_morbidite_h__nombre_hospit")}}
+FROM {{ref("stg_morbidite_h__nombre_hospit2")}}
 WHERE NOT (region LIKE '3 - France%' OR region LIKE '1 - France%')
     AND niveau NOT LIKE "France"
     AND nom_pathologie != 'TOTAL TOUTES CAUSES'

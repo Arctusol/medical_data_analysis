@@ -23,7 +23,7 @@ SPLIT(region, " - ")[SAFE_OFFSET(1)] AS nom_departement,
   SAFE_CAST(NULLIF(tx_brut_tt_age_pour_mille, 'ND') AS FLOAT64) AS tx_brut_tt_age_pour_mille,
   SAFE_CAST(NULLIF(tx_standard_tt_age_pour_mille, 'ND') AS FLOAT64) AS tx_standard_tt_age_pour_mille,
   SAFE_CAST(NULLIF(indice_comparatif_tt_age_percent, 'ND') AS FLOAT64) AS indice_comparatif_tt_age_percent
- FROM {{ref("stg_morbidite_h__taux_recours")}}
+ FROM {{ref("stg_morbidite_h__taux_recours2")}}
  WHERE NOT (region LIKE '3 - France%' OR region LIKE '1 - France%')
   AND niveau LIKE "Départements"
   AND nom_pathologie != 'TOTAL TOUTES CAUSES'

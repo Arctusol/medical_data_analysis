@@ -73,6 +73,7 @@ WITH mega_join AS (
         ON t1.cle_unique = t3.cle_unique
     WHERE 
         t1.sexe = 'Ensemble' AND t3.sexe = 'Ensemble'
+        AND t1.tranche_age = 'Tous âges confondus'
 )
 
 
@@ -82,4 +83,4 @@ SELECT
 FROM mega_join AS t1
 LEFT JOIN {{ref("stg_morbidite_h__class_services")}} c2
 ON t1.nom_pathologie = c2.pathologie
-
+ORDER BY cle_unique

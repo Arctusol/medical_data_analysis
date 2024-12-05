@@ -74,12 +74,27 @@ WITH agg_class as(
 
 SELECT 
     t1.*
-    ,t2.total_lit_hospi_complete
-    ,t2.total_sejour_hospi_complete
-    ,t2.total_journee_hospi_complete
-    ,t2.total_place_hospi_partielle
-    ,t2.total_sejour_hospi_partielle
+    ,t2.lit_hospi_complete
+    ,t2.sejour_hospi_complete
+    ,t2.journee_hospi_complete
+    ,t2.place_hospi_partielle
+    ,t2.sejour_hospi_partielle
+    ,t2.passage_urgence
+    ,t2.evolution_lit_hospi_complete1 as evolution_lit_hospi_complete
+    ,t2.evolution_percent_lit_hospi_complete1 as evolution_percent_lit_hospi_complete
+    ,t2.evolution_sejour_hospi_complete1 as evolution_sejour_hospi_complete
+    ,t2.evolution_percent_sejour_hospi_complete1 as evolution_percent_sejour_hospi_complete
+    ,t2.evolution_journee_hospi_complete1 as evolution_journee_hospi_complete
+    ,t2.evolution_percent_journee_hospi_complete1 as evolution_percent_journee_hospi_complete
+    ,t2.evolution_place_hospi_partielle1 as evolution_place_hospi_partielle
+    ,t2.evolution_percent_place_hospi_partielle1 as evolution_percent_place_hospi_partielle
+    ,t2.evolution_sejour_hospi_partielle1 as evolution_sejour_hospi_partielle
+    ,t2.evolution_percent_sejour_hospi_partielle1 as evolution_percent_sejour_hospi_partielle
+    ,t2.evolution_passage_urgence1 as evolution_passage_urgence
+    ,t2.evolution_percent_passage_urgence1 as evolution_percent_passage_urgence
 FROM agg_class t1
-LEFT JOIN {{ref("stg_capacite_services_h__capacite_services_dpt_region")}} t2
+LEFT JOIN {{ref("mart_capacite_dpt_reg_evol")}} t2
 ON t1.cle_unique = t2.cle_unique
+
+
 

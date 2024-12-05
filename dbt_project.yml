@@ -88,3 +88,10 @@ models:
     join_total_morbidite_capacite:
       +schema: join_total_morbidite_capacite
       +materialized: table
+
+    capacite:
+      +schema: capacite
+      +materialized: view
+    capacite_agg:
+      +schema: capacite_agg
+      +materialized: table

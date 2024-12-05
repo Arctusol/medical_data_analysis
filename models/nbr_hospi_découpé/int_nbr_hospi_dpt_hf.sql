@@ -12,7 +12,7 @@ SELECT
     code_age,
     tranche_age,
     nbr_hospi,
-FROM {{ref("stg_morbidite_h__nombre_hospit")}}
+FROM {{ref("stg_morbidite_h__nombre_hospit2")}}
 WHERE NOT (region LIKE '3 - France%' OR region LIKE '1 - France%')
     AND niveau LIKE "Départements"
     AND nom_pathologie != 'TOTAL TOUTES CAUSES'

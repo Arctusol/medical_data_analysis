@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/antob/Documents/Arctusol/projet_wagon/projet_data_JBN/machine_learning/model_development/mlruns/564973138240631685/ae446cde06fe4e6da11118cb32787fc3/artifacts
+end_time: 1733326973947
+entry_point_name: ''
+experiment_id: '564973138240631685'
+lifecycle_stage: active
+run_id: ae446cde06fe4e6da11118cb32787fc3
+run_name: serious-ray-679
+run_uuid: ae446cde06fe4e6da11118cb32787fc3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733326971318
+status: 4
+tags: []
+user_id: antob
