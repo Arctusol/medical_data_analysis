@@ -60,9 +60,12 @@ coverage.xml
 
 #BigQuery
 *.json
-<<<<<<< HEAD
 notebooks/logs.log
 
-notebooks/logs.log
-=======
->>>>>>> 0b06f1df2a1a145164c71042b2238fe6724df702
+# Data (ajustez selon vos besoins)
+*.csv
+*.xlsx
+*.db
+dataset/
+machine_learning/
+notebooks/
