@@ -1086,26 +1086,26 @@ if df_nbr_hospi is not None:
             st.metric(label="help", value="", help="Ce graphique 3D montre la distribution des hospitalisations par pathologie, durée moyenne de séjour et indice comparatif. Utilisez les contrôles pour faire pivoter et zoomer sur le graphique.")
 
         # Tableau récapitulatif détaillé
-        st.subheader("Évolution des pathologies (2018-2022)")
+        st.subheader("Évolution des pathologies - Augmentation les plus importantes (2018-2022)")
         
         # Calculer les évolutions année par année
         evolutions_by_year = {}
-        years = sorted(df_nbr_hospi['year'].dt.year.unique())
+        years = sorted(df_filtered['annee'].unique())
         
         for i in range(len(years)-1):
             current_year = years[i]
             next_year = years[i+1]
             
             # Données pour l'année courante et suivante
-            current_data = df_nbr_hospi[df_nbr_hospi['year'].dt.year == current_year].groupby('nom_pathologie')['nbr_hospi'].sum()
-            next_data = df_nbr_hospi[df_nbr_hospi['year'].dt.year == next_year].groupby('nom_pathologie')['nbr_hospi'].sum()
+            current_data = df_filtered[df_filtered['annee'] == current_year].groupby('nom_pathologie')['nbr_hospi'].sum()
+            next_data = df_filtered[df_filtered['annee'] == next_year].groupby('nom_pathologie')['nbr_hospi'].sum()
             
             # Calculer l'évolution en pourcentage
             evolution = ((next_data - current_data) / current_data * 100).fillna(0)
             evolutions_by_year[f'{current_year}-{next_year}'] = evolution
-        
+            
         # Créer le DataFrame de base avec le nombre total d'hospitalisations
-        df_summary = df_nbr_hospi.groupby('nom_pathologie')['nbr_hospi'].sum().reset_index()
+        df_summary = df_filtered.groupby('nom_pathologie')['nbr_hospi'].sum().reset_index()
         
         # Ajouter les évolutions année par année
         for period, evolution in evolutions_by_year.items():
@@ -1116,8 +1116,8 @@ if df_nbr_hospi is not None:
             )
         
         # Calculer l'évolution globale (2018-2022)
-        hospi_2018 = df_nbr_hospi[df_nbr_hospi['year'].dt.year == 2018].groupby('nom_pathologie')['nbr_hospi'].sum()
-        hospi_2022 = df_nbr_hospi[df_nbr_hospi['year'].dt.year == 2022].groupby('nom_pathologie')['nbr_hospi'].sum()
+        hospi_2018 = df_filtered[df_filtered['annee'] == min(years)].groupby('nom_pathologie')['nbr_hospi'].sum()
+        hospi_2022 = df_filtered[df_filtered['annee'] == max(years)].groupby('nom_pathologie')['nbr_hospi'].sum()
         evolution_globale = ((hospi_2022 - hospi_2018) / hospi_2018 * 100).fillna(0)
         
         # Ajouter l'évolution globale au DataFrame
@@ -1131,25 +1131,26 @@ if df_nbr_hospi is not None:
         df_summary = df_summary.sort_values('Evolution_globale', ascending=False)
         
         # Renommer les colonnes pour l'affichage
-        df_summary.columns = ['Pathologie', 'Hospitalisations'] + [f'Évol. {period} (%)' for period in evolutions_by_year.keys()] + ['Évol. 2018-2022 (%)']
+        df_summary.columns = ['Pathologie', 'Hospitalisations'] + [f'Évol. {period} (%)' for period in evolutions_by_year.keys()] + ['Évol. globale (%)']
         
         # Colonnes d'évolution pour le gradient
-        evolution_columns = ['Évol. 2018-2019 (%)', 'Évol. 2019-2020 (%)', 
-                           'Évol. 2020-2021 (%)', 'Évol. 2021-2022 (%)', 
-                           'Évol. 2018-2022 (%)']
-        
+        evolution_columns = [col for col in df_summary.columns if 'Évol.' in col]
+
+        # Filtrer les NaN avant de calculer min et max
+        evolution_values = df_summary[evolution_columns].values.flatten()
+        evolution_values = evolution_values[~pd.isna(evolution_values)]  # Supprime les NaN
+        vmin, vmax = evolution_values.min(), evolution_values.max()
+
         # Formater et afficher le tableau
         st.dataframe(
             df_summary.style.format({
                 'Hospitalisations': '{:,.0f}',
-                'Évol. 2018-2019 (%)': '{:+.1f}%',
-                'Évol. 2019-2020 (%)': '{:+.1f}%',
-                'Évol. 2020-2021 (%)': '{:+.1f}%',
-                'Évol. 2021-2022 (%)': '{:+.1f}%',
-                'Évol. 2018-2022 (%)': '{:+.1f}%'
+                **{col: '{:+.1f}%' for col in evolution_columns}
             }).background_gradient(
+                cmap='RdYlGn_r',
                 subset=evolution_columns,
-                cmap='RdYlBu_r'
+                vmin=vmin,
+                vmax=vmax
             ),
             use_container_width=True
         )
@@ -1157,26 +1158,31 @@ if df_nbr_hospi is not None:
         st.markdown("---")
         
         # Deuxième tableau avec les baisses en premier
-        st.subheader("Évolution des pathologies (2018-2022) - Baisses les plus importantes")
+        st.subheader("Évolution des pathologies - Baisses les plus importantes (2018-2022)")
         
         # Utiliser le même DataFrame mais trié dans l'ordre inverse
-        df_summary_desc = df_summary.sort_values('Évol. 2018-2022 (%)', ascending=True)
+        df_summary_desc = df_summary.sort_values('Évol. globale (%)', ascending=True)
         
+        # Filtrer les NaN avant de calculer min et max
+        evolution_values_desc = df_summary_desc[evolution_columns].values.flatten()
+        evolution_values_desc = evolution_values_desc[~pd.isna(evolution_values_desc)]  # Supprime les NaN
+        vmin_desc, vmax_desc = evolution_values_desc.min(), evolution_values_desc.max()
+
         # Afficher le deuxième tableau
         st.dataframe(
             df_summary_desc.style.format({
                 'Hospitalisations': '{:,.0f}',
-                'Évol. 2018-2019 (%)': '{:+.1f}%',
-                'Évol. 2019-2020 (%)': '{:+.1f}%',
-                'Évol. 2020-2021 (%)': '{:+.1f}%',
-                'Évol. 2021-2022 (%)': '{:+.1f}%',
-                'Évol. 2018-2022 (%)': '{:+.1f}%'
+                **{col: '{:+.1f}%' for col in evolution_columns}
             }).background_gradient(
+                cmap='RdYlGn_r',
                 subset=evolution_columns,
-                cmap='RdYlBu_r'
+                vmin=vmin_desc,
+                vmax=vmax_desc
             ),
             use_container_width=True
-        )
+        )        
+
+
         
     # Démographie
     with tab4:

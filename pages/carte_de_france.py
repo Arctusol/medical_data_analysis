@@ -347,39 +347,57 @@ if df is not None:
     if selected_service != "Tous":
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            if st.button("👉 Voir plus de détails", use_container_width=False):
-                # Obtenir la page correspondante au service
-                target_page = SERVICE_TO_PAGE.get(selected_service)
+            # Obtenir la page correspondante au service
+            target_page = SERVICE_TO_PAGE.get(selected_service)
+            
+            if target_page:
+                # Préparation des paramètres avec les valeurs actuellement sélectionnées
+                params = {
+                    "sexe": sexe,
+                    "annee": selected_year,
+                    "departement": "Tous les départements"  # Valeur par défaut
+                }
                 
-                if target_page:
-                    # Préparation des paramètres avec les valeurs actuellement sélectionnées
-                    params = {
-                        "sexe": sexe,
-                        "annee": selected_year,
-                        "departement": "Tous les départements"  # Valeur par défaut
-                    }
-                    
-                    # Ajout de la région/département sélectionné
-                    if niveau_administratif == "Régions":
-                        if selected_area != "Toutes les régions":
-                            params["region"] = selected_area
-                    else:
-                        if selected_area != "Tous les départements":
-                            params["departement"] = selected_area
-                    
-                    # Ajout de la pathologie si sélectionnée
-                    if selected_pathology != "Toutes les pathologies":
-                        params["pathologie"] = selected_pathology
-                    
-                    # Construction de l'URL avec la page correspondante
-                    base_url = f"https://medicalcapacity.streamlit.app/{target_page}"
-                    query_string = urlencode(params)
-                    url = f"{base_url}?{query_string}"
-                    
-                    # Ouvrir dans un nouvel onglet
-                    webbrowser.open_new_tab(url)
+                # Ajout de la région/département sélectionné
+                if niveau_administratif == "Régions":
+                    if selected_area != "Toutes les régions":
+                        params["region"] = selected_area
                 else:
-                    st.error(f"Pas de page détaillée disponible pour le service {selected_service}")
+                    if selected_area != "Tous les départements":
+                        params["departement"] = selected_area
+                
+                # Ajout de la pathologie si sélectionnée
+                if selected_pathology != "Toutes les pathologies":
+                    params["pathologie"] = selected_pathology
+                
+                # Construction de l'URL avec la page correspondante
+                base_url = f"https://medicalcapacity.streamlit.app/{target_page}"
+                query_string = urlencode(params)
+                url = f"{base_url}?{query_string}"
+                
+                # Afficher le lien HTML avec style
+                button_style = """
+                    <style>
+                        .custom-button {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            background-color: #F0F2F6;
+                            color: #0066CC;
+                            text-decoration: none;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+                        }
+                        .custom-button:hover {
+                            text-decoration: underline;
+                            transform: translateY(-2px);
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                        }
+                    </style>
+                """
+                st.markdown(button_style, unsafe_allow_html=True)
+                st.markdown(f'<a href="{url}" target="_self" class="custom-button">👉 Cliquer pour plus de détails</a>', unsafe_allow_html=True)
+            else:
+                st.error(f"Pas de page détaillée disponible pour le service {selected_service}")
                     
     # Création des onglets après les filtres
     tab1, tab2 = st.tabs([
