@@ -1,6 +1,6 @@
 # Documentation Analyse Médicale JBN
 
-## Structure des Données
+## Structure des données
 
 ### Table Principale : `class_join_total_morbidite_sexe_population`
 
