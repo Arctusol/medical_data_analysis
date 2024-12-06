@@ -363,4 +363,4 @@ with col2:
     st.image("pages/gooey.ai - ultra detailed 8k cg hospital medical room equipment.png", width=600)
     
 st.markdown("---")
-st.markdown("Développé avec 💫| Le Wagon - Batch #1834 - Promotion 2024")
+st.markdown("Développé avec 💫|  Le Wagon - Batch #1834 - Promotion 2024")
