@@ -1266,7 +1266,7 @@ if df is not None:
         st.subheader("Évolution des pathologies par Sexe - Augmentation les plus importantes (2018-2022)")
         
         # Données filtrées selon le sexe
-        df_filtered = df_filtered[df_filtered['sexe'] == selected_sex]
+        df_filtered = df_filtered[df_filtered['sexe'] == selected_sexe]
 
         # Calculer les évolutions année par année
         evolutions_sexe_by_year = {}

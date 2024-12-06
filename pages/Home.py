@@ -38,7 +38,7 @@ def display_centered_gif(gif_path):
     )
 
 # En-tête
-st.markdown("<h1 class='main-title' style='margin-top: -70px; margin-bottom: -8000px;'>🏨 Projet d'analyse et de prédiction hospitalière</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='main-title' style='margin-top: -70px; margin-bottom: -8000px;'>🏨 MEDCAP</h1>", unsafe_allow_html=True)
 
 # Charger et afficher l'animation Lottie
 lottie_url = "https://lottie.host/01b53e9b-fb22-4256-b630-fe179a862c14/SpE9Sq2zVA.json"
