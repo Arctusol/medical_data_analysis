@@ -358,5 +358,9 @@ except ImportError as e:
 except Exception as e:
     st.error(f"Une erreur s'est produite : {str(e)}")
 
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image("pages/gooey.ai - ultra detailed 8k cg hospital medical room equipment.png", width=600)
+    
 st.markdown("---")
 st.markdown("Développé avec 💫| Le Wagon - Batch #1834 - Promotion 2024")

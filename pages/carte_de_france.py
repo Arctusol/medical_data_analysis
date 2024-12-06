@@ -371,7 +371,7 @@ if df is not None:
                     params["pathologie"] = selected_pathology
                 
                 # Construction de l'URL avec la page correspondante
-                base_url = f"https://medicalcapacity.streamlit.app/{target_page}"
+                base_url = f"https://medicalanalysis.azurewebsites.net/{target_page}"
                 query_string = urlencode(params)
                 url = f"{base_url}?{query_string}"
                 

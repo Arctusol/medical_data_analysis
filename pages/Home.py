@@ -75,11 +75,11 @@ with col1:
         <h3>🎯 Vue générale</h3>
         <p>Explorez les tendances nationales et régionales des hospitalisations en France</p>
         <ul>
-            <li><a href="https://medicalcapacity.streamlit.app/Vue_globale" target="_self">Tableaux de bord interactifs</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/Vue_globale" target="_self">Analyses démographiques</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/Vue_globale" target="_self">Indicateurs de performance</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/Vue_globale" target="_self">Comparaisons régionales</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/Vue_globale" target="_self">Évolution temporelle</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/Vue_globale" target="_self">Tableaux de bord interactifs</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/Vue_globale" target="_self">Analyses démographiques</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/Vue_globale" target="_self">Indicateurs de performance</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/Vue_globale" target="_self">Comparaisons régionales</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/Vue_globale" target="_self">Évolution temporelle</a></li>
         </ul>
         </div>
     """, unsafe_allow_html=True)
@@ -90,12 +90,12 @@ with col2:
         <h3>⚕️ Focus spécialités</h3>
         <p>Analyses détaillées par spécialité médicale dans le milieu hospitalier</p>
         <ul>
-            <li><a href="https://medicalcapacity.streamlit.app/chirurgie" target="_self"> Chirurgie et interventions</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/medecine" target="_self">Médecine générale et spécialisée</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/obstetrique" target="_self">Obstétrique et maternité</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/psy" target="_self">Psychiatrie et santé mentale</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/ssr" target="_self">SSR (Soins de Suite et Réadaptation)</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/esnd" target="_self">ESND (Établissement de Soin Longue Durée)</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/chirurgie" target="_self"> Chirurgie et interventions</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/medecine" target="_self">Médecine générale et spécialisée</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/obstetrique" target="_self">Obstétrique et maternité</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/psy" target="_self">Psychiatrie et santé mentale</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/ssr" target="_self">SSR (Soins de Suite et Réadaptation)</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/esnd" target="_self">ESND (Établissement de Soin Longue Durée)</a></li>
         </ul>
         </div>
     """, unsafe_allow_html=True)
@@ -106,10 +106,10 @@ with col3:
         <h3>🔮 Outils avancés</h3>
         <p>Fonctionnalités interactives et prédictives</p>
         <ul>
-            <li><a href="https://medicalcapacity.streamlit.app/predictions" target="_self">Prédictions hospitalières</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/graph_generator" target="_self">Générateur de graphiques personnalisés</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/docteur_analyste" target="_self">Assistant virtuel IA</a></li>
-            <li><a href="https://medicalcapacity.streamlit.app/carte_de_france" target="_self">Cartographie interactive</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/predictions" target="_self">Prédictions hospitalières</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/graph_generator" target="_self">Générateur de graphiques personnalisés</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/docteur_analyste" target="_self">Assistant virtuel IA</a></li>
+            <li><a href="https://medicalanalysis.azurewebsites.net/carte_de_france" target="_self">Cartographie interactive</a></li>
 
         </ul>
         </div>
