@@ -1,5 +1,9 @@
 # 🏥 Analyse des données hospitalières
 
+### 🚀 Live Demo
+Accédez à la version en ligne de l'application :
+[https://medicalanalysis.azurewebsites.net/](https://medicalanalysis.azurewebsites.net/)
+
 ## 🎯 Vision du projet
 Une approche data-driven pour révolutionner la planification hospitalière en France. Notre projet vise à transformer la gestion des capacités hospitalières en passant d'une approche financière à une approche basée sur les besoins réels de la population.
 
@@ -17,9 +21,9 @@ Une approche data-driven pour révolutionner la planification hospitalière en F
 - 🎯 Créer un outil d'aide à la décision pour les ARS
 
 
-## 📈 Structure de l'Application
+## 📈 Structure de l'app
 
-### 🏠 Page d'Accueil
+### 🏠 Page d'accueil
 - Vue d'ensemble du projet
 - Points clés et indicateurs principaux
 
@@ -29,7 +33,7 @@ Une approche data-driven pour révolutionner la planification hospitalière en F
   - Visualisation géographique des données
   - Analyse régionale comparative
 
-### 🏥 Analyses par Service Médical
+### 🏥 Analyses par service Médical
 - 👨‍⚕️ Chirurgie
 - ⚕️ Médecine
 - 👶 Obstétrique
@@ -43,26 +47,22 @@ Chaque service propose :
 - Analyse démographique
 - Durées moyennes de séjour
 
-### 📊 Modèles Prédictifs
+### 📊 Modèles prédictifs
 - 📈 Prévisions des tendances
 - 🎯 Identification des zones de tension
 - 🔄 Analyse des patterns saisonniers
 - 🚨 Système d'alerte précoce
 
-### 🤖 Assistant Virtuel
+### 🤖 Assistant virtuel
 - 💬 Interface conversationnelle
 - 🔍 Analyse SQL en langage naturel
 - 📊 Génération de visualisations
 - 📝 Rapports personnalisés
 
 
-## 🔧 Installation et Déploiement
+## 🔧 Installation et déploiement
 
-### 🚀 Live Demo
-Accédez à la version en ligne de l'application :
-[https://medicalanalysis.azurewebsites.net/](https://medicalanalysis.azurewebsites.net/)
-
-### 💻 Installation Locale
+### 💻 Installation locale
 
 1. Cloner le repository
 ```bash
@@ -107,7 +107,7 @@ L'application sera accessible à l'adresse : [http://localhost:8501](http://loca
 
 L'application est déployée sur Azure Web Apps.
 
-## 📊 Sources de Données
+## 📊 Sources de données
 - 🏥 DREES (Direction de la Recherche, des Études, de l'Évaluation et des Statistiques)
 - 📊 Données hospitalières publiques
 
