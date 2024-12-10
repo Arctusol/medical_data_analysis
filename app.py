@@ -1,9 +1,13 @@
 import streamlit as st
+from utils.analytics import add_analytics
 import streamlit.components.v1 as components
 from bs4 import BeautifulSoup
 import shutil
 import pathlib
 import logging
+
+# Add analytics
+add_analytics()
 
 # Configuration de la page - doit être la première commande Streamlit
 st.set_page_config(
