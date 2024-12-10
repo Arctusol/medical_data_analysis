@@ -2,7 +2,49 @@ import streamlit as st
 import base64
 from streamlit_lottie import st_lottie
 import requests
+from bs4 import BeautifulSoup
+import shutil
+import pathlib
+import logging
 
+# Configuration de la page - doit être la première commande Streamlit
+st.set_page_config(
+    page_title="Analyse Hospitalière",
+    page_icon="🏥",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
+
+def add_analytics():
+    GA_ID = "GTM-NBHTFL6M"
+    analytics_js = f"""
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', '{GA_ID}');
+    </script>
+    <div id="{GA_ID}"></div>
+    """
+    
+    # Identify html path of streamlit
+    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+    logging.info(f'editing {index_path}')
+    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    if not soup.find(id=GA_ID):  # if id not found within html file
+        bck_index = index_path.with_suffix('.bck')
+        if bck_index.exists():
+            shutil.copy(bck_index, index_path)  # backup recovery
+        else:
+            shutil.copy(index_path, bck_index)  # save backup
+        html = str(soup)
+        new_html = html.replace('<head>', '<head>\n' + analytics_js)
+        index_path.write_text(new_html)  # insert analytics tag at top of head
+
+# Add analytics
+add_analytics()
 
 # CSS personnalisé pour le style
 st.markdown("""
@@ -201,15 +243,15 @@ st.markdown("""
     
     <br>
     <ul style="list-style-type: none; padding-left: 0;">
-        <li>🧑‍💻 <b>Jean-Baptiste Nez</b> - <a href="https://www.linkedin.com/in/jean-baptiste-nez">LinkedIn</a></li>
         <li>👨‍💻 <b>Antonin Bourdelle</b> - <a href="https://www.linkedin.com/in/antonin-bourdelle">LinkedIn</a></li>
+        <li>🧑‍💻 <b>Jean-Baptiste Nez</b> - <a href="https://www.linkedin.com/in/jean-baptiste-nez">LinkedIn</a></li>
         <li>👩‍💻 <b>Astrid Hugonin</b> - <a href="https://www.linkedin.com/in/astrid-hugonin-716a6680/">LinkedIn</a></li>
     </ul>
     </br>
 
     <p>🎓 Projet de formation Data Analyst - Le Wagon - 2024</p>
     
-    <p>⭐ <a href="https://github.com/Jean-Baptiste-N/projet_data_JBN">Voir le projet sur GitHub</a></p>
+    <p>⭐ <a href="https://github.com/Arctusol/medical_data_analysis">Voir le projet sur GitHub</a></p>
     </div>
 """, unsafe_allow_html=True)
 

@@ -7,7 +7,6 @@ import os
 import plotly.express as px
 
 # Configuration de la page
-st.set_page_config(page_title="Prédiction des hospitalisations", layout="wide")
 
 # Titre de la page
 st.title(" Prédiction des hospitalisations")

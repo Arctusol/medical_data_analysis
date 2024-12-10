@@ -1,4 +1,9 @@
 import streamlit as st
+import streamlit.components.v1 as components
+from bs4 import BeautifulSoup
+import shutil
+import pathlib
+import logging
 
 # Configuration de la page - doit être la première commande Streamlit
 st.set_page_config(
@@ -7,6 +12,38 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto"
 )
+
+def add_analytics():
+    GA_ID = "GTM-NBHTFL6M"
+    analytics_js = f"""
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', '{GA_ID}');
+    </script>
+    <div id="{GA_ID}"></div>
+    """
+    
+    # Identify html path of streamlit
+    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+    logging.info(f'editing {index_path}')
+    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    if not soup.find(id=GA_ID):  # if id not found within html file
+        bck_index = index_path.with_suffix('.bck')
+        if bck_index.exists():
+            shutil.copy(bck_index, index_path)  # backup recovery
+        else:
+            shutil.copy(index_path, bck_index)  # save backup
+        html = str(soup)
+        new_html = html.replace('<head>', '<head>\n' + analytics_js)
+        index_path.write_text(new_html)  # insert analytics tag at top of head
+
+# Add analytics
+add_analytics()
+
 
 # Organisation des pages
 home = st.Page("pages/Home.py", title="Accueil", icon="🏠", default=True)
@@ -19,7 +56,6 @@ obstetrique = st.Page("pages/obstetrique.py", title="Obstétrique", icon="👶")
 esdn = st.Page("pages/esnd.py", title="ESND", icon="🏥")
 psy = st.Page("pages/psy.py", title="Psychiatrie", icon="🧠")
 ssr = st.Page("pages/ssr.py", title="SSR", icon="♿")
-graphs = st.Page("pages/graph_generator.py", title="Générateur de graphiques", icon="📊")
 predictif = st.Page("pages/predictions.py", title="Modèles de prédiction", icon="📊")
 
 # Organisation en sections
@@ -28,7 +64,7 @@ pg = st.navigation({
     "Vue générale en France": [vue_globale, carte_de_france],
     "Vue par service médical": [chirurgie, medecine, obstetrique, psy, ssr, esdn],
     "Modèles prédictifs": [predictif],
-    "Outils": [graphs, chatSQL]
+    "Outils": [chatSQL]
 })
 
 # Exécution de la page sélectionnée
