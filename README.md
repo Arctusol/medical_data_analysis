@@ -47,7 +47,7 @@ Chaque service propose :
 - Analyse démographique
 - Durées moyennes de séjour
 
-### 📊 Modèles prédictifs
+### 📊 Modèles prédictifs (work in progress)
 - 📈 Prévisions des tendances
 - 🎯 Identification des zones de tension
 - 🔄 Analyse des patterns saisonniers
