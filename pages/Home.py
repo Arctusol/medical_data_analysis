@@ -7,13 +7,6 @@ import shutil
 import pathlib
 import logging
 
-# Configuration de la page - doit être la première commande Streamlit
-st.set_page_config(
-    page_title="Analyse Hospitalière",
-    page_icon="🏥",
-    layout="wide",
-    initial_sidebar_state="auto"
-)
 
 def add_analytics():
     GA_ID = "GTM-NBHTFL6M"
