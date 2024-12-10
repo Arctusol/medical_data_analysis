@@ -8,7 +8,7 @@ def load_data() -> Dict[str, pd.DataFrame]:
     """
     Charge les données depuis BigQuery, à la fois la table de morbidité et la table des capacités
     """
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/antob/Documents/Arctusol/projet_wagon/projet_data_JBN/projet-jbn-data-le-wagon-533639ce801d.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "projet-jbn-data-le-wagon-533639ce801d.json"
     client = bigquery.Client()
 
     # Table de morbidité
