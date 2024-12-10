@@ -11,6 +11,14 @@ from sqlalchemy.engine import create_engine
 from sqlalchemy_bigquery import BigQueryDialect
 import time
 from streamlit_lottie import st_lottie
+from langchain_community.chat_message_histories import StreamlitChatMessageHistory
+from langchain.callbacks.base import BaseCallbackHandler
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain.agents import AgentExecutor, create_react_agent
+from langchain.callbacks.streamlit import StreamlitCallbackHandler
+import re
+from langchain_core.messages import HumanMessage, AIMessage
 
 MAIN_COLOR = "#FF4B4B"
 
@@ -47,8 +55,16 @@ st.markdown("""
     <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
 """, unsafe_allow_html=True)
 
-# Titre de la page
-st.markdown("<h1 class='main-title' style='margin-top: -50px;'>🤖 Analyste IA</h1>", unsafe_allow_html=True)
+# Titre de la page et bouton nouvelle conversation
+col1, col2 = st.columns([4, 1])
+with col1:
+    st.markdown("<h1 class='main-title' style='margin-top: -50px;'>🤖 Analyste IA</h1>", unsafe_allow_html=True)
+with col2:
+    if st.button("🔄 Nouvelle discussion", key="new_chat_top"):
+        msgs = StreamlitChatMessageHistory(key="langchain_messages")
+        msgs.clear()
+        st.session_state.messages = []
+        st.rerun()
 
 try:
     # Configuration Azure OpenAI
@@ -68,7 +84,7 @@ try:
             project_id = gcp_service_account["project_id"]
             
             # Créer l'URL de connexion BigQuery
-            connection_string = f"bigquery://{project_id}/dbt_medical_analysis_join_total_morbidite"
+            connection_string = f"bigquery://{project_id}/final_dataset"
             
             # Créer le moteur SQLAlchemy avec les credentials
             engine = create_engine(
@@ -95,130 +111,170 @@ try:
                 azure_deployment=AZURE_CONFIG["azure_deployment"],
                 openai_api_version=AZURE_CONFIG["api_version"],
                 api_key=AZURE_CONFIG["api_key"],
-                temperature=0
+                temperature=0,
+                streaming=True
             )
             
             # Initialiser la base de données
             db = init_database()
-            if not db:
+            if db is None:
                 return None
-                
-            # Créer la boîte à outils SQL
-            toolkit = SQLDatabaseToolkit(db=db, llm=llm)
-            
-            # Créer un prompt système personnalisé pour le contexte médical
+
+            # Create the prompt template with memory
             system_message = """
             Vous êtes un assistant médical spécialisé dans l'analyse des données hospitalières françaises.
-            Votre rôle est d'aider à comprendre et analyser les tendances en matière d'hospitalisations, de pathologies et de services médicaux.
+            IMPORTANT : Vous devez TOUJOURS répondre en français, jamais en anglais.
+            
+            AVANT TOUTE ANALYSE :
+            1. Si le message contient uniquement des remerciements ou des salutations de fin (comme "merci", "au revoir", "à bientôt", etc.), 
+            répondre simplement à l'utilisateur.
+            2. Ne PAS faire de requête SQL dans ce cas.
+            3. Pour tout autre message, procéder à l'analyse normale selon le format ci-dessous.
+            
+            🎯 OBJECTIFS :
+            1. Répondre aux questions sur les données hospitalières françaises
+            2. Analyser les tendances d'hospitalisation par région et département
+            3. Fournir des comparaisons temporelles pertinentes (2018-2022)
+            4. Identifier les variations significatives dans les indicateurs clés
+            
+            📋 STRUCTURE DE RÉPONSE :
+            Pour chaque analyse, suivre ce format en français :
+            
+            🏥 Vue d'ensemble (année en cours)
+               - Total des hospitalisations sur la zone demandée et la période
+               - Durée moyenne de séjour des hospitalisations sur la zone demandée et la période
+               - Taux standardisé pour 1000 habitants
 
-            Pour chaque question, vous devez :
-            1. Analyser soigneusement la demande de l'utilisateur
-            2. Créer une requête SQL précise et adaptée pour BigQuery
-            3. Interpréter les résultats de manière professionnelle et accessible
+            Vue par pathologie (suggestions)
+                - Sélection des 5 pathologies les plus fréquentes
+                - Nombre d'hospitalisations par pathologie
+                - Durée moyenne de séjour
+                - Programmées vs Non programmées
+                - Comparaison avec 2018
+                - Tendances par type de service (classification)
+                - Variations des indicateurs clés
+            
+            Vue par sexe
+                - Nombre d'hospitalisations par sexe
+                - Durée moyenne de séjour par sexe
+                - Comparaison avec 2018
+                
+            Suggestions d'actions
+                - Propose des recherches complémentaires en fonction des variations observées
+
+            ⚡ RÈGLES IMPORTANTES :
+            1. Toujours commencer par une vue d'ensemble de l'année 2022
+            2. Comparer systématiquement avec 2018 pour l'évolution si possible
+            3. Utiliser "Ensemble" pour les analyses générales
+            4. Filtrer explicitement sur Homme/Femme pour les comparaisons
+            5. Inclure des émojis pertinents pour structurer la réponse
+            6. Résumé des points clés en français
+            
+            📊 INDICATEURS CLÉS À SURVEILLER :
+            1. Hospitalisations :
+               - Nombre total (nbr_hospi)
+               - Durée moyenne (AVG_duree_hospi)
+               - Programmées vs Non programmées
+            
+            2. Performance :
+               - Taux standardisé pour 1000 habitants
+               - Indice comparatif
+               - Durée moyenne de séjour
+        
+            🔍 FILTRES STANDARDS :
+            1. Niveau administratif (colonne : "niveau"):
+              - région
+               - département
+            
+            2. Nom du département ou région :
+               - Utiliser la colonne nom_region qui contient les deux informations
+               - île-de-France s'écrit dans la table : "Ile-de-France"
+
+            2. Temporel :
+               - Année principale : 2022
+               - Comparaison : 2018
+            
+            3. Services médicaux (colonne : "classification"):
+               - Valeur : M (pour Médecine)
+               - Valeur : C (pour Chirurgie)
+               - Valeur : SSR (pour Soins de Suite)
+               - Valeur : O (pour Obstétrique)
+               - Valeur : ESND (pour Soins Longue Durée)
+               - Valeur : PSY (pour Psychothérapie)
+            
+            4. Démographique :
+               - Tranches d'âge (0-1 à 85+)
+               - Sexe (Homme/Femme/Ensemble)
+            
+            ⚠️ POINTS D'ATTENTION :
+            1. Toujours vérifier la cohérence des données
+            2. Signaler les variations importantes (>20%)
+            3. Contextualiser les résultats
             4. Proposer des analyses complémentaires pertinentes
-            5. Fournir des visualisations claires et appropriées pour aider l'utilisateur
-            6. Réponds à l'utilisateur en Français uniquement
 
-            Règles importantes :
-            - Les tables principales sont :
-              * `class_join_total_morbidite_sexe_population` (données principales)
-              * `class_join_total_morbidite_capacite_kpi` (données de capacité)
-            - Utilisez la syntaxe SQL BigQuery (par exemple DATE() pour les dates)
-            - Limitez les résultats à 10 lignes sauf si spécifié autrement
-            - Présentez les résultats de manière claire avec des émojis appropriés
-            - Gardez un ton professionnel car nous parlons de santé
-            - Proposez des analyses complémentaires pertinentes
+            ⚠️ RÈGLES STRICTES :
+            1. NE JAMAIS inventer de données si la requête SQL ne retourne rien
+            2. Si aucune donnée n'est trouvée, répondre explicitement :
+               "Je n'ai pas trouvé de données pour cette requête. Voici les raisons possibles :
+               - La pathologie n'existe pas dans la base
+               - La période demandée n'est pas couverte
+               - La zone géographique n'est pas disponible
+               Voulez-vous reformuler votre demande ?"
+            3. Ne pas faire d'approximations ou d'extrapolations
+            4. Si une métrique est manquante, indiquer "Donnée non disponible"
+            5. Toujours indiquer la source exacte des données (année, région)
 
-            Structure des données principales :
+            🔧 OPTIMISATION DES REQUÊTES SQL :
+            1. TOUJOURS utiliser LIMIT 100 maximum pour les requêtes générales
+            2. Privilégier les agrégations (GROUP BY) plutôt que les données brutes
+            3. Pour les comparaisons temporelles :
+               - Utiliser des sous-requêtes avec agrégations
+               - Limiter à 2-3 années clés (2018, 2022)
+            4. Pour les analyses régionales :
+               - Agréger d'abord par région/département
+               - Trier par les métriques les plus importantes (ORDER BY)
+               - Limiter aux top 5 résultats pertinents
+            5. Pour les recherches de pathologies :
+               - TOUJOURS utiliser LIKE avec des % (exemple: pathologie LIKE '%Accouchement%')
+               - Ne jamais faire de comparaison exacte (pas de pathologie = '...')
+               - Utiliser LOWER() pour ignorer la casse (exemple: LOWER(pathologie) LIKE LOWER('%cancer%'))
+               - Pour les pathologies complexes, utiliser plusieurs LIKE avec OR
             
-            1. Identification et Localisation
-            - niveau (STRING) : Niveau administratif (département, région)
-            - cle_unique (STRING) : Identifiant unique par enregistrement
-            - sexe (STRING) : Homme/Femme/Ensemble
-            - year (DATE) : Format AAAA-MM-JJ
-            - annee (INTEGER) : Année en format numérique
-            - region (STRING) : Code ou nom de la région
-            - code_region (INTEGER) : Code numérique de la région
-            - nom_region (STRING) : Nom complet de la région
-
-            2. Pathologie
-            - pathologie (STRING) : Code descriptif de la pathologie
-            - code_pathologie (INTEGER) : Code numérique de la pathologie
-            - nom_pathologie (STRING) : Nom complet de la pathologie
-
-            3. Hospitalisations
-            - nbr_hospi (INTEGER) : Nombre total d'hospitalisations
-            - hospi_prog_24h (FLOAT) : Hospitalisations programmées (24h)
-            - hospi_autres_24h (FLOAT) : Autres hospitalisations (24h)
-            - hospi_total_24h (FLOAT) : Total hospitalisations en 24h
-            - hospi_[1-9]J (FLOAT) : Hospitalisations par durée (1-9 jours)
-            - hospi_10J_19J (FLOAT) : Hospitalisations de 10 à 19 jours
-            - hospi_20J_29J (FLOAT) : Hospitalisations de 20 à 29 jours
-            - hospi_30J (FLOAT) : Hospitalisations de 30 jours et plus
-            - hospi_total_jj (FLOAT) : Total toutes durées confondues
-            - AVG_duree_hospi (FLOAT) : Durée moyenne des hospitalisations
-
-            4. Données Démographiques
-            Les données démographiques sont exprimées en proportions (FLOAT) pour chaque tranche d'âge :
-            - tranche_age_0_1 : Nourrissons (0 à 1 an)
-            - tranche_age_1_4 : Jeunes enfants (1 à 4 ans)
-            - tranche_age_5_14 : Enfants (5 à 14 ans)
-            - tranche_age_15_24 : Adolescents et jeunes adultes (15 à 24 ans)
-            - tranche_age_25_34 : Jeunes adultes (25 à 34 ans)
-            - tranche_age_35_44 : Adultes (35 à 44 ans)
-            - tranche_age_45_54 : Adultes matures (45 à 54 ans)
-            - tranche_age_55_64 : Seniors actifs (55 à 64 ans)
-            - tranche_age_65_74 : Jeunes retraités (65 à 74 ans)
-            - tranche_age_75_84 : Personnes âgées (75 à 84 ans)
-            - tranche_age_85_et_plus : Personnes très âgées (85 ans et plus)
-
-            Ces proportions permettent d'analyser :
-            - La répartition des hospitalisations par âge
-            - Les tendances spécifiques à certaines tranches d'âge
-            - La comparaison entre différentes régions ou services médicaux
-            - L'évolution temporelle de la structure d'âge des patients
-
-            5. Indicateurs de Santé
-            - tx_brut_tt_age_pour_mille (FLOAT) : Taux brut pour 1 000 habitants
-            - tx_standard_tt_age_pour_mille (FLOAT) : Taux standardisé pour 1 000 habitants
-            - indice_comparatif_tt_age_percent (FLOAT) : Indice standardisé en pourcentage
-
-            6. Classification et Population
-            - classification (STRING) : Service médical :
-              * M (Médecine)
-              * C (Chirurgie)
-              * SSR (Soins de Suite et de Réadaptation)
-              * O (Obstétrique)
-              * ESND (Établissement de Soin Longue Durée)
-              * PSY (Psychothérapie)
-
-            - population (INTEGER) : Population totale par département
-
-            Données de capacité (table class_join_total_morbidite_capacite_kpi) :
-            
-            1. Capacité d'Accueil
-            - lit_hospi_complete (FLOAT) : Nombre de lits en hospitalisation complète
-            - place_hospi_partielle (FLOAT) : Nombre de places en hospitalisation partielle
-            - passage_urgence (FLOAT) : Nombre de passages aux urgences
-
-            2. Activité Hospitalière
-            - sejour_hospi_complete (FLOAT) : Nombre de séjours en hospitalisation complète
-            - sejour_hospi_partielle (FLOAT) : Nombre de séjours en hospitalisation partielle
-            - journee_hospi_complete (FLOAT) : Nombre de journées d'hospitalisation complète
-
-            N'hésitez pas à croiser les données entre les tables pour fournir des analyses pertinentes.
+            ⚠️ IMPORTANT : Toutes les réponses doivent être en français, y compris les titres, les descriptions et les analyses.
             """
             
-            # Créer l'agent SQL avec le prompt personnalisé
-            agent = create_sql_agent(
+            # Create SQL agent
+            toolkit = SQLDatabaseToolkit(db=db, llm=llm)
+            
+            base_agent = create_sql_agent(
                 llm=llm,
-                toolkit=toolkit,
-                verbose=True,
+                db=db,
                 agent_type="openai-tools",
-                prefix=system_message
+                verbose=True,
+                prefix=system_message,
+                handle_parsing_errors=True
             )
             
-            return agent
+            # Create prompt template with history
+            prompt = ChatPromptTemplate.from_messages([
+                ("system", system_message),
+                MessagesPlaceholder(variable_name="history"),
+                ("human", "{input}")
+            ])
+
+            # Create chain with prompt and llm
+            chain = prompt | base_agent
+            
+            # Add memory to the chain
+            msgs = StreamlitChatMessageHistory(key="langchain_messages")
+            agent_with_memory = RunnableWithMessageHistory(
+                chain,
+                lambda session_id: msgs,
+                input_messages_key="input",
+                history_messages_key="history"
+            )
+            
+            return agent_with_memory
             
         except Exception as e:
             st.error(f"Erreur d'initialisation de l'agent : {str(e)}")
@@ -262,84 +318,143 @@ try:
         suggestions = [template for key in context for template in templates.get(key, [])]
         return suggestions if suggestions else ["Besoin d'aide pour poser une question ?"]
 
+    def truncate_messages(messages, max_messages=5):
+        """Garde uniquement les n derniers messages pour éviter de dépasser la limite de l'API."""
+        return messages[-max_messages:] if len(messages) > max_messages else messages
+
+    def clean_sql_from_message(message):
+        """Nettoie le message des données SQL volumineuses."""
+        # Si c'est un message assistant, on traite son contenu
+        if getattr(message, 'type', None) == 'assistant':
+            content = message.content
+            # Cherche les requêtes SQL et leurs résultats
+            sql_pattern = r"SELECT.*?FROM.*?(?=\n\n|$)"
+            content = re.sub(sql_pattern, "[Requête SQL exécutée]", content, flags=re.DOTALL | re.IGNORECASE)
+            
+            # Limite la taille des résultats de données
+            if "```" in content:
+                parts = content.split("```")
+                for i in range(1, len(parts), 2):  # Traite uniquement les blocs de code
+                    if len(parts[i]) > 500:  # Si le bloc de code est trop long
+                        parts[i] = parts[i][:500] + "\n... [Résultats tronqués pour l'historique] ..."
+                content = "```".join(parts)
+            
+            # Crée un nouveau message avec le contenu nettoyé
+            return HumanMessage(content=message.content) if message.type == "human" else AIMessage(content=content)
+        return message
+
+    # StreamHandler for real-time responses
+    class StreamHandler(BaseCallbackHandler):
+        def __init__(self, container, initial_text=""):
+            self.container = container
+            self.text = initial_text
+
+        def on_llm_new_token(self, token: str, **kwargs) -> None:
+            self.text += token
+            self.container.markdown(self.text)
+
     def main():
-        # Initialiser l'historique des messages
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
-
-        # Créer les containers
-        chat_container = st.container()
-        suggestions_container = st.container()
-        input_container = st.container()
-
-        # Afficher l'historique des messages dans le chat container
-        with chat_container:
-            for message in st.session_state.messages:
-                with st.chat_message(message["role"]):
-                    st.markdown(message["content"])
-
-        # Gérer l'entrée utilisateur
-        with input_container:
-            if prompt := st.chat_input("Posez votre question sur les données médicales..."):
-                # Ajouter la question à l'historique
-                st.session_state.messages.append({"role": "user", "content": prompt})
-                
-                # Afficher la question
-                with st.chat_message("user"):
-                    st.markdown(prompt)
-                
-                # Afficher le message "en cours de réflexion"
-                with st.chat_message("assistant"):
-                    message_placeholder = st.empty()
+        # Initialize the agent if not already done
+        if 'agent' not in st.session_state:
+            st.session_state.agent = init_agent()
+            if st.session_state.agent is None:
+                st.error("Impossible d'initialiser l'agent. Veuillez vérifier votre configuration.")
+                return
+        
+        # Initialize message history
+        msgs = StreamlitChatMessageHistory(key="langchain_messages")
+        if len(msgs.messages) == 0:
+            msgs.add_ai_message("Comment puis-je vous aider avec l'analyse des données médicales ?")
+        
+        # Display chat messages
+        for msg in msgs.messages:
+            st.chat_message(msg.type).write(msg.content)
+        
+        # Get user input
+        if prompt := st.chat_input("Posez votre question sur les données médicales..."):
+            st.chat_message("human").write(prompt)
+            
+            # Create a placeholder for the AI response
+            with st.chat_message("assistant"):
+                try:
+                    message_container = st.container()
+                    st_callback = StreamlitCallbackHandler(message_container)
                     
-                    try:
-
-                        update_thinking_status(message_placeholder, 'validating')
-                        response = st.session_state.agent.invoke(prompt)
-
-
-                        final_response = response.get('output', "Je n'ai pas pu générer une réponse.")
-                        message_placeholder.markdown(final_response)
-                        
-                        # Ajouter la réponse à l'historique
-                        st.session_state.messages.append({"role": "assistant", "content": final_response})
-                        st.rerun()
+                    # Get last 2 messages if they exist
+                    last_messages = msgs.messages[-2:] if len(msgs.messages) >= 2 else msgs.messages
                     
-                    except Exception as e:
-                        message_placeholder.markdown(f"❌ Désolé, une erreur s'est produite : {str(e)}")
+                    response = st.session_state.agent.invoke(
+                        {"input": prompt},
+                        {"configurable": {
+                            "session_id": "medical_analysis",
+                            "history": last_messages
+                        },
+                        "callbacks": [st_callback]}
+                    )
+                    
+                    final_response = response.get('output', "Je n'ai pas pu générer une réponse.")
+                    message_container.markdown(final_response)
+                    
+                except Exception as e:
+                    st.error(f"Une erreur s'est produite : {str(e)}")
+                    return
 
         # Afficher les suggestions après chaque réponse
-        if st.session_state.messages and st.session_state.messages[-1]["role"] == "assistant":
-            with suggestions_container:
-                st.markdown("### 💬 Discussion")
-                suggestions = get_contextual_suggestions(st.session_state.messages[-2]["content"])  # Get suggestions based on last user message
-                
-                # Créer des colonnes pour les suggestions
-                num_suggestions = len(suggestions)
-                if num_suggestions > 0:
-                    cols = st.columns(min(3, num_suggestions))  # Maximum 3 colonnes
-                    for idx, suggestion in enumerate(suggestions):
-                        col_idx = idx % min(3, num_suggestions)
-                        with cols[col_idx]:
-                            if st.button(suggestion, key=f"sugg_{idx}"):
-                                st.session_state.messages.append({"role": "user", "content": suggestion})
-                                with st.chat_message("user"):
-                                    st.markdown(suggestion)
-                                 
-                                with st.chat_message("assistant"):
-                                    message_placeholder = st.empty()
-                                    try:
-                                        response = st.session_state.agent.invoke(prompt)
+        if msgs.messages and msgs.messages[-1].type == "assistant":
+            with st.container():
+                st.markdown("### 💡 Questions suggérées")
+                last_user_message = next((msg.content for msg in reversed(msgs.messages) if msg.type == "human"), None)
+                if last_user_message:
+                    suggestions = get_contextual_suggestions(last_user_message)
+                    
+                    num_suggestions = len(suggestions)
+                    if num_suggestions > 0:
+                        cols = st.columns(min(3, num_suggestions))
+                        for idx, suggestion in enumerate(suggestions):
+                            col_idx = idx % min(3, num_suggestions)
+                            with cols[col_idx]:
+                                if st.button(suggestion, key=f"sugg_{idx}"):
+                                    st.chat_message("human").write(suggestion)
+                                    
+                                    # Create a placeholder for the AI response
+                                    with st.chat_message("assistant"):
+                                        message_container = st.container()
+                                        try:
+                                            st_callback = StreamlitCallbackHandler(message_container)
+                                            # Get last 2 messages if they exist
+                                            last_messages = msgs.messages[-2:] if len(msgs.messages) >= 2 else msgs.messages
+                                            
+                                            response = st.session_state.agent.invoke(
+                                                {"input": suggestion},
+                                                {"configurable": {
+                                                    "session_id": "medical_analysis",
+                                                    "history": last_messages
+                                                },
+                                                "callbacks": [st_callback]}
+                                            )
+                                            final_response = response.get('output', "Je n'ai pas pu générer une réponse.")
+                                            message_container.markdown(final_response)
+                                            
+                                        except Exception as e:
+                                            st.error(f"Une erreur s'est produite : {str(e)}")
 
-                                        final_response = response.get('output', "Je n'ai pas pu générer une réponse.")
-                                        message_placeholder.markdown(final_response)
-                                        st.session_state.messages.append({"role": "assistant", "content": final_response})
-                                        st.rerun()
-                                    except Exception as e:
-                                        message_placeholder.markdown(f"❌ Désolé, une erreur s'est produite : {str(e)}")
+            # Ajouter le markdown à la fin du chat
+            st.markdown("### 📝 Résumé de la discussion")
+            st.markdown("""
+            Cette interface vous permet d'analyser les données hospitalières françaises de manière interactive. 
+            Vous pouvez :
+            - Poser des questions en langage naturel sur les données médicales
+            - Obtenir des analyses détaillées par région, pathologie ou période
+            - Explorer les tendances et comparaisons temporelles
+            - Recevoir des suggestions de questions pertinentes
+            
+            N'hésitez pas à utiliser les suggestions ou à poser vos propres questions !
+            """)
 
         # Bouton pour nouvelle conversation
         if st.button("🔄 Nouvelle conversation"):
+            msgs = StreamlitChatMessageHistory(key="langchain_messages")
+            msgs.clear()
             st.session_state.messages = []
             st.rerun()
 
@@ -358,9 +473,5 @@ except ImportError as e:
 except Exception as e:
     st.error(f"Une erreur s'est produite : {str(e)}")
 
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    st.image("pages/gooey.ai - ultra detailed 8k cg hospital medical room equipment.png", width=600)
-    
 st.markdown("---")
-st.markdown("Développé avec 💫|  Le Wagon - Batch #1834 - Promotion 2024")
+st.markdown("Développé avec 💫| Le Wagon - Batch #1834 - Promotion 2024")
